@@ -1159,6 +1159,7 @@ class ICMSTot(nfe_310.ICMSTot):
 class Total(nfe_310.Total):
     def __init__(self):
         super(Total, self).__init__()
+        self.ICMSTot = ICMSTot()
         
 
 class Entrega(nfe_310.Entrega):
@@ -1263,9 +1264,16 @@ class InfNFe(nfe_310.InfNFe):
         for d in self.det:
             xml += d.xml
             
-        if self.ide.mod.valor == '65':
-            for p in self.pag:
-                xml += p.xml
+        # if self.ide.mod.valor == '65' or self.ide.mod.valor == '55':
+        print(f'PAG VALOR: {self.pag}')
+        if self.pag:
+            if isinstance(self.pag, list):
+                for p in self.pag:
+                    xml += p.xml
+                    print(f'PAG VALOR: {p.xml}')
+            else:
+                xml += self.pag.xml
+                print(f'PAG VALOR: {self.pag.xml}')
 
         xml += self.total.xml
         xml += self.transp.xml

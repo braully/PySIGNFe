@@ -1093,14 +1093,23 @@ class Pag(XMLNFe):
         }
 
     def get_xml(self):
-        if not (self.tPag.valor or self.vPag.valor or self.card.xml):
+        if not (self.tPag.valor 
+                or self.vPag.valor 
+                or self.card.xml
+                or self.detPag):
             return ''
             
         xml = XMLNFe.get_xml(self)
         xml += u'<pag>'
-        xml += self.tPag.xml
-        xml += self.vPag.xml
-        xml += self.card.xml
+        if self.detPag:
+            for d in self.detPag:
+                xml += d.xml
+        if self.tPag.valor:
+            xml += self.tPag.xml
+        if self.vPag.valor:
+            xml += self.vPag.xml
+        if self.card:
+            xml += self.card.xml
         xml += u'</pag>'
         return xml
 
@@ -1450,7 +1459,7 @@ class Ide(nfe_200.Ide):
     def __init__(self):
         super(Ide, self).__init__()
         self.mod     = TagInteiro(nome=u'mod'     , codigo=u'B06', tamanho=[ 2,  2, 2], raiz=u'//NFe/infNFe/ide')
-        self.dhEmi     = TagData(nome=u'dhEmi'       , codigo=u'B09',                   raiz=u'//NFe/infNFe/ide')
+        self.dhEmi     = TagDataHoraUTC(nome=u'dhEmi'       , codigo=u'B09',                   raiz=u'//NFe/infNFe/ide')
         self.dhSaiEnt  = TagData(nome=u'dhSaiEnt'       , codigo=u'B10',                raiz=u'//NFe/infNFe/ide', obrigatorio=False)
         self.hSaiEnt   = TagHora(nome=u'dhSaiEnt'    , codigo=u'B10a',                   raiz=u'//NFe/infNFe/ide', obrigatorio=False)
         self.idDest    = TagInteiro(nome=u'idDest'      , codigo=u'B11a', tamanho=[ 1,  1, 1], raiz=u'//NFe/infNFe/ide', valor=1)
@@ -1551,7 +1560,7 @@ class InfNFe(nfe_200.InfNFe):
         self.transp   = Transp()
         self.cobr     = Cobr()
         ##NFC-e
-        self.pag      = []
+        # self.pag      = []~;
         ##
         self.infAdic  = InfAdic()
         self.exporta  = Exporta()

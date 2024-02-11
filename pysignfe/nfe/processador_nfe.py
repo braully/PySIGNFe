@@ -9,6 +9,10 @@ import time
 import os
 from uuid import uuid4
 
+#FIXME: Urgente, remover o import abaixo, pois ele é usado apenas para testes
+#https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error
+ssl._create_default_https_context = ssl._create_unverified_context
+
 try:
     from collections import OrderedDict
 except ImportError:
@@ -522,7 +526,7 @@ class ProcessadorNFe(object):
             novos_arquivos.append((novo_arquivo_nome, novo_arquivo))
             
             caminho_original = self.caminho
-            self.caminho = self.caminho + u'ArquivosXML/NFe/ConsultaCadastro/'
+            self.caminho = str(self.caminho) + 'ArquivosXML/NFe/ConsultaCadastro/'
             
             self.salvar_novos_arquivos(novos_arquivos=novos_arquivos)
             self.caminho = caminho_original
@@ -882,7 +886,11 @@ class ProcessadorNFe(object):
         ambiente = nfe.infNFe.ide.tpAmb.valor
         
         caminho_original = self.caminho
+
+        print(f'Gerando XMLs para {ambiente} {caminho_original}')
         self.caminho = self.monta_caminho_nfe(ambiente=nfe.infNFe.ide.tpAmb.valor, chave_nfe=nfe.chave, dir='Lotes')
+
+        print(f'nfe nates de assinar: {nfe.xml}' )
         
         if self.versao == u'2.00':
             envio = EnviNFe_200()
@@ -897,6 +905,8 @@ class ProcessadorNFe(object):
         
         for nfe in lista_nfes:
             self.certificado.assina_xmlnfe(nfe)
+            print(f'xml depois de assinar: {nfe.xml}' )
+
             nfe.validar()
 
         envio.NFe = lista_nfes
@@ -1064,7 +1074,7 @@ class ProcessadorNFe(object):
         return processo
 
     def monta_caminho_nfe(self, ambiente, chave_nfe=None, dir='', data=None):
-        caminho = self.caminho + u'ArquivosXML/NFe/'
+        caminho = str(self.caminho) + 'ArquivosXML/NFe/'
 
         if ambiente == 1:
             caminho = os.path.join(caminho, 'producao/')

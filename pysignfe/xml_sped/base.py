@@ -452,9 +452,12 @@ class TagData(TagCaracter):
     def set_valor(self, novo_valor):
         if isinstance(novo_valor, basestring):
             if novo_valor:
-                # O valor pode vir como a hora e tz também 
-                #(Ex: '2018-01-01T10:50:12-03:00)
-                novo_valor = datetime.strptime(novo_valor[:10], u'%Y-%m-%d')
+                try:
+                    novo_valor = datetime.strptime(novo_valor, u'%Y-%m-%dT%H:%M:%S%z')
+                except:
+                    # O valor pode vir como a hora e tz também 
+                    #(Ex: '2018-01-01T10:50:12-03:00)
+                    novo_valor = datetime.strptime(novo_valor[:10], u'%Y-%m-%d')
             else:
                 novo_valor = None
 
@@ -464,7 +467,10 @@ class TagData(TagCaracter):
             # Aqui não dá pra usar a função strftime pois em alguns
             # casos a data retornada é 01/01/0001 00:00:00
             # e a função strftime só aceita data com anos a partir de 1900
-            self._valor_string = u'%04d-%02d-%02d' % (self._valor_data.year, self._valor_data.month, self._valor_data.day)
+            try:
+                self._valor_string = self._valor_data.strftime(u'%Y-%m-%dT%H:%M:%S%z')
+            except:
+                self._valor_string = u'%04d-%02d-%02d' % (self._valor_data.year, self._valor_data.month, self._valor_data.day)
         else:
             self._valor_data = None
             self._valor_string = u''
@@ -693,6 +699,8 @@ class TagInteiro(TagCaracter):
              self.valor = kwargs['valor']
 
     def set_valor(self, novo_valor):
+        if(novo_valor == 52):
+            print('GOIAS VALOR')
         if isinstance(novo_valor, basestring):
             if novo_valor:
                 novo_valor = int(novo_valor)
@@ -700,12 +708,13 @@ class TagInteiro(TagCaracter):
                 novo_valor = 0
 
         if isinstance(novo_valor, (int, Decimal)) and self._valida(novo_valor):
+            if hasattr(self, '_valor_inteiro') and self._valor_inteiro == 52 and novo_valor == 0:
+                raise ValueError('removendo valor já setado')
             self._valor_inteiro = novo_valor
             self._valor_string = unicode(self._valor_inteiro)
 
             if (len(self.tamanho) >= 3) and self.tamanho[2] and (len(self._valor_string) < self.tamanho[2]):
                 self._valor_string = self._valor_string.rjust(self.tamanho[2], u'0')
-
         else:
             self._valor_inteiro = 0
             self._valor_string = u'0'
@@ -876,7 +885,7 @@ class XMLNFe(NohXML):
 
     def validar(self):
         arquivo_esquema = self.caminho_esquema + self.arquivo_esquema
-        
+        print(f'arquivo validador: {arquivo_esquema}')
         # Aqui é importante remover a declaração do encoding
         # para evitar erros de conversão unicode para ascii
         xml = tira_abertura(self.xml).encode(u'utf-8')
@@ -885,10 +894,13 @@ class XMLNFe(NohXML):
         
         if not esquema.validate(etree.fromstring(xml)):
             for e in esquema.error_log:
+                print(f'erro: {e.message}')
                 if e.level == 1:
                     self.alertas.append(e.message.replace('{http://www.portalfiscal.inf.br/nfe}', ''))
                 elif e.level == 2:
                     self.erros.append(e.message.replace('{http://www.portalfiscal.inf.br/nfe}', ''))
+
+        
         
         return esquema.error_log
         

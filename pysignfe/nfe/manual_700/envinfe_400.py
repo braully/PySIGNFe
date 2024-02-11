@@ -14,6 +14,7 @@ class EnviNFe(envinfe_310.EnviNFe):
         super(EnviNFe, self).__init__()
         self.caminho_esquema = os.path.join(DIRNAME, u'schema/', ESQUEMA_ATUAL + u'/')
         self.arquivo_esquema = u'enviNFe_v4.00.xsd'
+        self.versao  = TagDecimal(nome=u'enviNFe', codigo=u'AP02', propriedade=u'versao', namespace=NAMESPACE_NFE, valor=u'4.00', raiz=u'/')
         
     def get_xml(self):
         return super(EnviNFe, self).get_xml()

@@ -5,8 +5,8 @@ from pysignfe.corr_unicode import *
 
 from pysignfe.nfe import ProcessadorNFe, DANFE
 from pysignfe.nfe.manual_401 import *
-#from pysignfe.nfe.manual_500 import *
-#from pysignfe.nfe.manual_600 import *
+from pysignfe.nfe.manual_500 import *
+from pysignfe.nfe.manual_600 import *
 from pysignfe.nfe.manual_700 import *
 
 from os.path import abspath, dirname
@@ -80,12 +80,14 @@ class nf_e(NotaFiscal):
         else:
             n = NFe_200()
         n.infNFe.xml = xml_nfe
-                
+        print(f'auto_preencher_campos: {ambiente} - {estado}')
         n.auto_preencher_campos(ambiente=ambiente, estado=estado)
         
         if consumidor:
+            print('preencher_campos_nfce')
             n.preencher_campos_nfce()
         else:
+            print(f'preencher_campos_nfe: {n}')
             n.preencher_campos_nfe()
             
         processo =  p.gerar_xml([n], numero_lote=numero_lote)

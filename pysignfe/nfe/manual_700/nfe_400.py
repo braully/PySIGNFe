@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import locale
 from pysignfe.corr_unicode import *
 import os
 
 from pysignfe.xml_sped import *
+from pysignfe.nfe.manual_500 import nfe_310 as nfe_310old
 from pysignfe.nfe.manual_600 import nfe_310
 from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 from pysignfe.nfe.webservices_3 import CONSULTA_CHAVE_NFCE, CONSULTA_QRCODE_NFCE, ESTADO_SVC_CONTINGENCIA
@@ -802,12 +804,12 @@ class Rastro(XMLNFe):
 class Prod(nfe_310.Prod):
     def __init__(self):
         super(Prod, self).__init__()
-        self.CEST = TagCaracter(nome='CEST', codigo='I05c', tamanho=[7, 7], raiz='//det/prod')
+        self.CEST = TagCaracter(nome='CEST', codigo='I05c', tamanho=[7, 7], raiz='//det/prod', obrigatorio=False)
         self.veicProd = VeicProd()
         self.comb     = Comb()
 
         # Novos campos para informar se o produto foi fabricado em escala relevante ou não (Nota Tecnica 2016.002)
-        self.indEscala = TagCaracter(nome='indEscala', codigo='I05d', tamanho=[1, 1], raiz='//det/prod')
+        self.indEscala = TagCaracter(nome='indEscala', codigo='I05d', tamanho=[1, 1], raiz='//det/prod', obrigatorio=False)
         self.CNPJFab = TagCaracter(nome='CNPJFab', codigo='I05e', tamanho=[14, 14], raiz='//det/prod', obrigatorio=False)
         self.cBenef = TagCaracter(nome='cBenef', codigo='I05f', tamanho=[10, 10], raiz='//det/prod', obrigatorio=False)
         self.rastro = []
@@ -1060,21 +1062,23 @@ class Pag(nfe_310.Pag):
         }
 
     def get_xml(self):
-        if not len(self.detPag):
+        if not (len(self.detPag) or self.tPag):
+            print('NOT PAGAMENTO')
             return ''
 
         xml = XMLNFe.get_xml(self)
         xml += u'<pag>'
         for d in self.detPag:
-            xml += nr.xml
-        xml += self.vTroco.xml
+            xml += d.xml
+        if self.vTroco.valor:
+            xml += self.vTroco.xml
         xml += u'</pag>'
         return xml
 
     def set_xml(self, arquivo):
         if self._le_xml(arquivo):
             self.detPag = self.le_grupo('//NFe/infNFe/pag/detPag', DetPag)
-            self.vTroco.xml  = arquivo
+            # self.vTroco.xml  = arquivo
 
     xml = property(get_xml, set_xml)
 
@@ -1194,24 +1198,24 @@ class ISSQNTot(nfe_310.ISSQNTot):
 class ICMSTot(nfe_310.ICMSTot):
     def __init__(self):
         super(ICMSTot, self).__init__()
-
         # Incluidos campos relativos ao FCP (Nota Tecnica 2016.002)
         self.vFCP       = TagDecimal(nome='vFCP', codigo='W04b', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
         self.vFCPST     = TagDecimal(nome='vFCPST', codigo='W06a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
         self.vFCPSTRet  = TagDecimal(nome='vFCPSTRet', codigo='W06b', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot')
-
-        self.vIPIDevol  = TagDecimal(nome='vIPIDevol', codigo='W12a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot', obrigatorio=False)
+        self.vIPIDevol  = TagDecimal(nome='vIPIDevol', codigo='W12a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//NFe/infNFe/total/ICMSTot', obrigatorio=True)
+        self.vPIS    = TagDecimal(nome=u'vPIS'   , codigo=u'W13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//NFe/infNFe/total/ICMSTot', obrigatorio=True)
 
     def get_xml(self):
+        print('\n\n********************* ICMSTot **********************\n\n')
         xml = XMLNFe.get_xml(self)
         xml += '<ICMSTot>'
         xml += self.vBC.xml
         xml += self.vICMS.xml
         xml += self.vICMSDeson.xml
-        xml += self.vFCP.xml
         xml += self.vFCPUFDest.xml
         xml += self.vICMSUFDest.xml
         xml += self.vICMSUFRemet.xml
+        xml += self.vFCP.xml
         xml += self.vBCST.xml
         xml += self.vST.xml
         xml += self.vFCPST.xml
@@ -1223,6 +1227,7 @@ class ICMSTot(nfe_310.ICMSTot):
         xml += self.vII.xml
         xml += self.vIPI.xml
         xml += self.vIPIDevol.xml
+        # print(f'IPDEVOL {self.vIPIDevol.xml}')
         xml += self.vPIS.xml
         xml += self.vCOFINS.xml
         xml += self.vOutro.xml
@@ -1260,6 +1265,7 @@ class ICMSTot(nfe_310.ICMSTot):
 class Total(nfe_310.Total):
     def __init__(self):
         super(Total, self).__init__()
+        self.ICMSTot = ICMSTot()
 
 
 class Entrega(nfe_310.Entrega):
@@ -1403,7 +1409,7 @@ class Ide(nfe_310.Ide):
     xml = property(get_xml, set_xml)
 
 
-class InfNFe(nfe_310.InfNFe):
+class InfNFe(nfe_310old.InfNFe):
     def __init__(self):
         super(InfNFe, self).__init__()
         self.versao   = TagDecimal(nome='infNFe' , codigo='A01', propriedade='versao', raiz='//NFe', namespace=NAMESPACE_NFE, valor='4.00')
@@ -1413,6 +1419,8 @@ class InfNFe(nfe_310.InfNFe):
         self.dest     = Dest()
         self.retirada = Retirada()
         self.entrega  = Entrega()
+        self.autXML   = []
+        self.det      = []
         self.total    = Total()
         self.transp   = Transp()
         self.cobr     = Cobr()
@@ -1423,9 +1431,35 @@ class InfNFe(nfe_310.InfNFe):
         self.cana     = Cana()
 
     def get_xml(self):
-        return super(InfNFe, self).get_xml()
+        xml = XMLNFe.get_xml(self)
+        xml += u'<infNFe versao="' + unicode(self.versao.valor) + u'" Id="' + self.Id.valor + u'">'
+        xml += self.ide.xml
+        xml += self.emit.xml
+        xml += self.avulsa.xml
+        xml += self.dest.xml
+        xml += self.retirada.xml
+        xml += self.entrega.xml
+
+        for aut in self.autXML:
+            xml += aut.xml
+
+        for d in self.det:
+            xml += d.xml
+            
+        xml += self.total.xml
+        xml += self.transp.xml
+        xml += self.cobr.xml
+        # if self.ide.mod.valor == '65' or self.ide.mod.valor == '55':
+        xml += self.pag.xml
+        xml += self.infAdic.xml
+        xml += self.exporta.xml
+        xml += self.compra.xml
+        xml += self.cana.xml
+        xml += u'</infNFe>'
+        return xml
 
     def set_xml(self, arquivo):
+        print(f'SET_XML: {arquivo}')
         if self._le_xml(arquivo):
             self.versao.xml   = arquivo
             self.Id.xml       = arquivo
@@ -1446,7 +1480,7 @@ class InfNFe(nfe_310.InfNFe):
 
             self.det = self.le_grupo('//NFe/infNFe/det', Det)
 
-            self.pag = self.le_grupo('//NFe/infNFe/pag', Pag)
+            self.pag.xml = arquivo
 
             self.total.xml    = arquivo
             self.transp.xml   = arquivo

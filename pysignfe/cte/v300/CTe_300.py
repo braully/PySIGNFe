@@ -246,7 +246,7 @@ class Dup(XMLNFe):
     def __init__(self):
         super(Dup, self).__init__()
         self.nDup  = TagCaracter(nome='nDup', tamanho=[1, 60], raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
-        self.dVenc = TagData(nome='dVenc', raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
+        self.dVenc = TagDataHoraUTC(nome='dVenc', raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
         self.vDup  = TagDecimal(nome='vDup', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz='//dup', obrigatorio=False, namespace=NAMESPACE_CTE, namespace_obrigatorio=False)
 
     def get_xml(self):

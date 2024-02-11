@@ -1417,7 +1417,7 @@ class Prod(XMLNFe):
         self.qCom     = TagDecimal(nome=u'qCom'     , codigo=u'I10' , tamanho=[1,  12, 1], decimais=[0, 4, 4], raiz=u'//det/prod')
         self.vUnCom   = TagDecimal(nome=u'vUnCom'   , codigo=u'I10a', tamanho=[1,  16, 1], decimais=[0, 4, 4], raiz=u'//det/prod')
         self.vProd    = TagDecimal(nome=u'vProd'    , codigo=u'I11' , tamanho=[1,  15, 1], decimais=[0, 2, 2], raiz=u'//det/prod')
-        self.cEANTrib = TagCaracter(nome=u'cEANTrib', codigo=u'I12' , tamanho=[0,  14]                       , raiz=u'//det/prod')
+        self.cEANTrib = TagCaracter(nome=u'cEANTrib', codigo=u'I12' , tamanho=[0,  14]                       , raiz=u'//det/prod', valor="SEM GTIN")
         self.uTrib    = TagCaracter(nome=u'uTrib'   , codigo=u'I13' , tamanho=[1,   6]                       , raiz=u'//det/prod')
         self.qTrib    = TagDecimal(nome=u'qTrib'    , codigo=u'I14' , tamanho=[1,  12, 1], decimais=[0, 4, 4], raiz=u'//det/prod')
         self.vUnTrib  = TagDecimal(nome=u'vUnTrib'  , codigo=u'I14a', tamanho=[1,  16, 1], decimais=[0, 4, 4], raiz=u'//det/prod')
@@ -1733,7 +1733,7 @@ class Dup(XMLNFe):
     def __init__(self):
         super(Dup, self).__init__()
         self.nDup  = TagCaracter(nome=u'nDup', codigo=u'Y08', tamanho=[1, 60],                        raiz=u'//dup', obrigatorio=False)
-        self.dVenc = TagData(nome=u'dVenc'   , codigo=u'Y09',                                         raiz=u'//dup', obrigatorio=False)
+        self.dVenc = TagDataHoraUTC(nome=u'dVenc'   , codigo=u'Y09',                                         raiz=u'//dup', obrigatorio=False)
         self.vDup  = TagDecimal(nome=u'vDup' , codigo=u'Y10', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//dup', obrigatorio=False)
 
     def get_xml(self):

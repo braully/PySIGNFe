@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import datetime
 from pysignfe.corr_unicode import *
 from pysignfe.xml_sped import *
 from pysignfe.nfe.manual_401 import ESQUEMA_ATUAL
@@ -1815,10 +1816,14 @@ class NFe(nfe_110.NFe):
         
     def auto_preencher_campos(self, ambiente, estado, contingencia=False, consumidor=False):
         self.infNFe.ide.tpAmb.valor   = ambiente
+        print(f'UF CODIGO: {UF_CODIGO[estado]}')
+        print(f'VAlor anteiro: {self.infNFe.ide.cUF.valor}')
         self.infNFe.ide.cUF.valor     = UF_CODIGO[estado]
+        print(f'VAlor posterior: {self.infNFe.ide.cUF.valor}')
         self.infNFe.ide.verProc.valor = __version__
+
         
-        if self.infNFe.versao.valor=='3.10':
+        if self.infNFe.versao.valor=='3.10' or self.infNFe.versao.valor=='4.00':
             if not self.infNFe.ide.dhEmi.valor:
                 self.infNFe.ide.dhEmi.valor = datetime.utcnow()
                 
