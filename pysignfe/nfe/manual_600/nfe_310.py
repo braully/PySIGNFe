@@ -925,7 +925,14 @@ class Det(nfe_310.Det):
             self.impostoDevol.xml = arquivo
             self.infAdProd.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Compra(nfe_310.Compra):
