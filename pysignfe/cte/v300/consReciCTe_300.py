@@ -34,7 +34,14 @@ class ConsReciCTe(XMLNFe):
 
         return self.xml
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 
@@ -82,7 +89,14 @@ class InfProt(XMLNFe):
             self.cStat.xml     = arquivo
             self.xMotivo.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class ProtCTe(XMLNFe):
@@ -115,7 +129,14 @@ class ProtCTe(XMLNFe):
             self.infProt.xml = self._le_noh('//protCTe/infProt', ns=NAMESPACE_CTE)
             self.Signature.xml = self._le_noh('//protCTe/sig:Signature', ns=NAMESPACE_CTE)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     def protocolo_formatado(self):
         if not self.infProt.nProt.valor:
@@ -185,7 +206,14 @@ class RetConsReciCTe(XMLNFe):
             for pn in self.protCTe:
                 self.dic_protCTe[pn.infProt.chCTe.valor] = pn
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo    
     
     
 class ProcCTe(XMLNFe):
@@ -211,4 +239,11 @@ class ProcCTe(XMLNFe):
             self.CTe.xml     = arquivo
             self.protCTe.xml = self._le_noh('//cteProc/protCTe', ns=NAMESPACE_CTE)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

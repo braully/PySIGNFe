@@ -33,7 +33,14 @@ class ConsultarLoteRpsEnvio(XMLNFe):
             self.Prestador.xml = arquivo
             self.Protocolo.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
     
@@ -66,4 +73,11 @@ class ConsultarLoteRpsResposta(XMLNFe):
             self.CompNfse = self.le_grupo('[nfse]//ConsultarLoteRpsResposta/CompNfse', CompNfse)
             self.ListaMensagemRetorno.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

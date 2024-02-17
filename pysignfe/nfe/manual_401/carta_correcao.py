@@ -32,7 +32,14 @@ class DetEvento(XMLNFe):
             self.xCorrecao.xml = arquivo
             self.xCondUso.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 class InfEventoEnviado(XMLNFe):
     def __init__(self):
@@ -85,7 +92,14 @@ class InfEventoEnviado(XMLNFe):
             self.verEvento.xml = arquivo
             self.detEvento.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class EnvEvento(XMLNFe):
@@ -123,7 +137,14 @@ class EnvEvento(XMLNFe):
         if self._le_xml(arquivo):
             self.infEvento.xml = arquivo
             self.Signature.xml = self._le_noh('//envEvento/sig:Signature')
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfEventoRecebido(XMLNFe):
@@ -191,7 +212,14 @@ class InfEventoRecebido(XMLNFe):
             self.dhRegEvento.xml = arquivo
             self.nProt.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetEnvEvento(XMLNFe):
@@ -249,7 +277,14 @@ class RetEnvEvento(XMLNFe):
             self.infEvento.xml = arquivo
             self.Signature.xml = self._le_noh('//retEnvEvento/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 class ProcEventoNFe(XMLNFe):
     def __init__(self):
@@ -288,4 +323,11 @@ class ProcEventoNFe(XMLNFe):
             self.envEvento.Signature.xml = arquivo
             self.Signature.xml = self._le_noh('//procEventoNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

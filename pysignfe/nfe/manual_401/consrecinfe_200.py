@@ -74,7 +74,14 @@ class RetConsReciNFe(consrecinfe_110.RetConsReciNFe):
             for pn in self.protNFe:
                 self.dic_protNFe[pn.infProt.chNFe.valor] = pn
        
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class ProcNFe(consrecinfe_110.ProcNFe):

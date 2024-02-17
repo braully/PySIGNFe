@@ -33,7 +33,14 @@ class ConsultarNfseRpsEnvio(XMLNFe):
             self.IdentificacaoRps.xml = arquivo
             self.Prestador.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
     
@@ -62,4 +69,11 @@ class ConsultarNfseRpsResposta(XMLNFe):
             self.CompNfse.xml = arquivo
             self.ListaMensagemRetorno.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

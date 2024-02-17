@@ -33,7 +33,14 @@ class ConsStatServ(XMLNFe):
             self.cUF.xml    = arquivo
             self.xServ.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class RetConsStatServ(XMLNFe):
@@ -81,4 +88,11 @@ class RetConsStatServ(XMLNFe):
             self.dhRetorno.xml = arquivo
             self.xObs.xml      = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

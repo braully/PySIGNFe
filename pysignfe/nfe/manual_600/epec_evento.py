@@ -38,7 +38,14 @@ class Dest(XMLNFe):
             self.IE.xml = arquivo
             self.idEstrangeiro.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class DetEventoEPEC(DetEvento):
@@ -90,7 +97,14 @@ class DetEventoEPEC(DetEvento):
             self.vICMS.xml = arquivo
             self.vST.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfEventoEnviadoEPEC(InfEventoEnviado):
@@ -130,7 +144,14 @@ class EnvEventoEPEC(EnvEvento):
             self.idLote.xml    = arquivo
             self.evento = self.le_grupo('//envEvento/evento', EventoEPEC)
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class TagChNFePend(TagCaracter):
@@ -192,7 +213,14 @@ class InfEventoRecebidoEPEC(InfEventoRecebido):
             self.nProt.xml = arquivo
             self.chNFePend = self.le_grupo('//retEnvEvento/retEvento/infEvento/chNFePend', TagChNFePend)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetEventoEPEC(RetEvento):
@@ -241,7 +269,14 @@ class RetEnvEventoEPEC(RetEnvEvento):
             for ret in self.retEvento:
                 self.dic_retEvento[ret.infEvento.chNFe.valor] = ret
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class ProcEventoNFeEPEC(ProcEventoNFe):

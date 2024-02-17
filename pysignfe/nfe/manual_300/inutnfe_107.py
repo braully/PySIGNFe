@@ -52,7 +52,14 @@ class InfInutEnviado(XMLNFe):
             self.nNFFin.xml = arquivo
             self.xJust.xml  = arquivo
         
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InutNFe(XMLNFe):
@@ -86,7 +93,14 @@ class InutNFe(XMLNFe):
             self.infInut.xml   = arquivo
             self.Signature.xml = self._le_noh('//inutNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     def monta_chave(self):
         chave = unicode(self.infInut.cUF.valor).zfill(2)
@@ -174,7 +188,14 @@ class InfInutRecebido(XMLNFe):
             self.dhRecbto.xml = arquivo
             self.nProt.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     
 class RetInutNFe(XMLNFe):
@@ -205,7 +226,14 @@ class RetInutNFe(XMLNFe):
             self.infInut.xml   = arquivo
             self.Signature.xml = self._le_noh('//retInutNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     def monta_chave(self):
         chave = unicode(self.infInut.cUF.valor).zfill(2)
@@ -248,4 +276,11 @@ class ProcInutNFe(XMLNFe):
             self.inutNFe.xml    = arquivo
             self.retInutNFe.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

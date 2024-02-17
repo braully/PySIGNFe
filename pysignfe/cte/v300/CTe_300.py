@@ -30,7 +30,14 @@ class AutXML(XMLNFe):
             self.CNPJ.xml = arquivo
             self.CPF.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfCTeAnu(XMLNFe):
@@ -54,7 +61,14 @@ class InfCTeAnu(XMLNFe):
             self.chCte.xml = arquivo
             self.dEmi.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfCTeComp(XMLNFe):
@@ -75,7 +89,14 @@ class InfCTeComp(XMLNFe):
         if self._le_xml(arquivo):
             self.chCTe.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfCTeMultimodal(XMLNFe):
@@ -94,7 +115,14 @@ class InfCTeMultimodal(XMLNFe):
         if self._le_xml(arquivo):
             self.chCTeMultimodal.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfServVinc(XMLNFe):
@@ -116,7 +144,14 @@ class InfServVinc(XMLNFe):
         if self._le_xml(arquivo):
             self.infCTeMultimodal = self.le_grupo('//CTe/infCte/infCTeNorm/infServVinc/infCTeMultimodal', InfCTeMultimodal, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfGlobalizado(XMLNFe):
@@ -137,7 +172,14 @@ class InfGlobalizado(XMLNFe):
         if self._le_xml(arquivo):
             self.xObs.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RefNF(XMLNFe):
@@ -181,7 +223,14 @@ class RefNF(XMLNFe):
             self.valor.xml     = arquivo
             self.dEmi.xml      = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class TomaICMS(XMLNFe):
@@ -209,7 +258,14 @@ class TomaICMS(XMLNFe):
             self.refNF.xml = arquivo
             self.refCte.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfCTeSub(XMLNFe):
@@ -239,7 +295,14 @@ class InfCTeSub(XMLNFe):
             self.tomaICMS.xml  = arquivo
             #self.indAlteraToma.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class Dup(XMLNFe):
@@ -267,7 +330,14 @@ class Dup(XMLNFe):
             self.dVenc.xml = arquivo
             self.vDup.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Fat(XMLNFe):
@@ -298,7 +368,14 @@ class Fat(XMLNFe):
             self.vDesc.xml = arquivo
             self.vLiq.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Cobr(XMLNFe):
@@ -324,7 +401,14 @@ class Cobr(XMLNFe):
             self.fat.xml  = arquivo
             self.dup = self.le_grupo('//CTe/infCte/infCTeNorm/cobr/dup', Dup, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class VeicNovos(XMLNFe):
@@ -360,7 +444,14 @@ class VeicNovos(XMLNFe):
             self.vUnit.xml  = arquivo
             self.vFrete.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfModal(XMLNFe):
@@ -399,7 +490,14 @@ class InfModal(XMLNFe):
                 self.modal.xml = arquivo
 
                 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class IdDocAntEle(XMLNFe):
@@ -420,7 +518,14 @@ class IdDocAntEle(XMLNFe):
         if self._le_xml(arquivo):
             self.chCTe.xml  = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class IdDocAntPap(XMLNFe):
@@ -454,7 +559,14 @@ class IdDocAntPap(XMLNFe):
             self.nDoc.xml   = arquivo
             self.dEmi.xml   = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class IdDocAnt(XMLNFe):
@@ -479,7 +591,14 @@ class IdDocAnt(XMLNFe):
             self.idDocAntPap = self.le_grupo('//CTe/infCte/infCTeNorm/docAnt/emitDocAnt/idDocAnt/idDocAntPap', IdDocAntPap, sigla_ns='cte')
             self.idDocAntEle = self.le_grupo('//CTe/infCte/infCTeNorm/docAnt/emitDocAnt/idDocAnt/idDocAntEle', IdDocAntEle, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class EmitDocAnt(XMLNFe):
@@ -521,7 +640,14 @@ class EmitDocAnt(XMLNFe):
             self.xNome.xml  = arquivo
             self.idDocAnt = self.le_grupo('//CTe/infCte/infCTeNorm/docAnt/emitDocAnt/idDocAnt', IdDocAnt, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class DocAnt(XMLNFe):
@@ -544,7 +670,14 @@ class DocAnt(XMLNFe):
         if self._le_xml(arquivo):
             self.emitDocAnt  = self.le_grupo('//CTe/infCte/infCTeNorm/docAnt/emitDocAnt', EmitDocAnt, sigla_ns='cte')
     
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfOutros(XMLNFe):
@@ -591,7 +724,14 @@ class InfOutros(XMLNFe):
             self.infUnidCarga  = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infOutros/infUnidCarga', InfUnidCarga, sigla_ns='cte')
             self.infUnidTransp = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infOutros/infUnidTransp', InfUnidTransp, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class InfNFe(XMLNFe):
@@ -628,7 +768,14 @@ class InfNFe(XMLNFe):
             self.infUnidCarga  = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNFe/infUnidCarga', InfUnidCarga, sigla_ns='cte')
             self.infUnidTransp = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNFe/infUnidTransp', InfUnidTransp, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class LacUnidTransp(XMLNFe):
@@ -649,7 +796,14 @@ class LacUnidTransp(XMLNFe):
         if self._le_xml(arquivo):
             self.nLacre.xml  = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class InfUnidTransp(XMLNFe):
@@ -688,7 +842,14 @@ class InfUnidTransp(XMLNFe):
             self.infUnidCarga = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNF/infUnidTransp/infUnidCarga', InfUnidCarga, sigla_ns='cte')
             self.lacUnidTransp = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNF/infUnidTransp/lacUnidTransp', LacUnidTransp, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class LacUnidCarga(XMLNFe):
@@ -710,7 +871,14 @@ class LacUnidCarga(XMLNFe):
         if self._le_xml(arquivo):
             self.nLacre.xml  = arquivo
             
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo    
 
     
 class InfUnidCarga(XMLNFe):
@@ -744,7 +912,14 @@ class InfUnidCarga(XMLNFe):
             self.qtdRat.xml      = arquivo
             self.lacUnidCarga = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNF/infUnidCarga/lacUnidCarga', LacUnidCarga, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class InfNF(XMLNFe):
@@ -824,7 +999,14 @@ class InfNF(XMLNFe):
             self.infUnidCarga  = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNF/infUnidCarga', InfUnidCarga, sigla_ns='cte')
             self.infUnidTransp = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNF/infUnidTransp', InfUnidTransp, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfDoc(XMLNFe):
@@ -856,7 +1038,14 @@ class InfDoc(XMLNFe):
             self.infNFe = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infNFe', InfNFe, sigla_ns='cte')
             self.infOutros = self.le_grupo('//CTe/infCte/infCTeNorm/infDoc/infOutros', InfOutros, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfQ(XMLNFe):
@@ -881,7 +1070,14 @@ class InfQ(XMLNFe):
             self.tpMed.xml = arquivo
             self.qCarga.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfCarga(XMLNFe):
@@ -914,7 +1110,14 @@ class InfCarga(XMLNFe):
             self.vCargaAverb.xml = arquivo
             self.infQ = self.le_grupo('//CTe/infCte/infCTeNorm/infCarga/infQ', InfQ, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfCTeNorm(XMLNFe):
@@ -959,7 +1162,14 @@ class InfCTeNorm(XMLNFe):
             self.infServVinc.xml = arquivo
             self.veicNovos = self.le_grupo('//CTe/infCte/infCTeNorm/veicNovos', VeicNovos, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class ICMSUFFim(XMLNFe):
@@ -1003,7 +1213,14 @@ class ICMSUFFim(XMLNFe):
             self.vICMSUFFim.xml     = arquivo
             self.vICMSUFIni.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class TagCSTICMS(TagCaracter):
@@ -1282,7 +1499,14 @@ class ICMS(XMLNFe):
             
             self.indSN.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class Imp(XMLNFe):
@@ -1310,7 +1534,14 @@ class Imp(XMLNFe):
             self.vTotTrib.xml   = arquivo
             self.ICMSUFFim.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Comp(XMLNFe):
@@ -1335,7 +1566,14 @@ class Comp(XMLNFe):
             self.xNome.xml  = arquivo
             self.vComp.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class VPrest(XMLNFe):
@@ -1362,7 +1600,14 @@ class VPrest(XMLNFe):
             self.vRec.xml = arquivo
             self.Comp = self.le_grupo('//CTe/infCte/vPrest/Comp', Comp, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class EnderDest(XMLNFe):
@@ -1408,7 +1653,14 @@ class EnderDest(XMLNFe):
             self.cPais.xml   = arquivo
             self.xPais.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Dest(XMLNFe):
@@ -1459,7 +1711,14 @@ class Dest(XMLNFe):
             self.email.xml     = arquivo
             #self.locEnt.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class EnderReceb(XMLNFe):
@@ -1505,7 +1764,14 @@ class EnderReceb(XMLNFe):
             self.cPais.xml   = arquivo
             self.xPais.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Receb(XMLNFe):
@@ -1550,7 +1816,14 @@ class Receb(XMLNFe):
             self.enderReceb.xml = arquivo
             self.email.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class EnderExped(XMLNFe):
@@ -1596,7 +1869,14 @@ class EnderExped(XMLNFe):
             self.cPais.xml   = arquivo
             self.xPais.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class Exped(XMLNFe):
@@ -1641,7 +1921,14 @@ class Exped(XMLNFe):
             self.enderExped.xml = arquivo
             self.email.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class EnderReme(XMLNFe):
@@ -1687,7 +1974,14 @@ class EnderReme(XMLNFe):
             self.cPais.xml   = arquivo
             self.xPais.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Rem(XMLNFe):
@@ -1741,7 +2035,14 @@ class Rem(XMLNFe):
             #self.infNFe = self.le_grupo('//CTe/infCte/rem/infNFe', InfNFe, sigla_ns='cte')
             #self.infOutros = self.le_grupo('//CTe/infCte/rem/infOutros', InfOutros, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class EnderEmit(XMLNFe):
@@ -1790,7 +2091,14 @@ class EnderEmit(XMLNFe):
             #self.xPais.xml   = arquivo
             self.fone.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     def get_txt(self):
         txt = 'C05|'
@@ -1843,7 +2151,14 @@ class Emit(XMLNFe):
             self.xFant.xml     = arquivo
             self.enderEmit.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class ObsFisco(XMLNFe):
@@ -1867,7 +2182,14 @@ class ObsFisco(XMLNFe):
             self.xCampo.xml = arquivo
             self.xTexto.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class ObsCont(XMLNFe):
@@ -1891,7 +2213,14 @@ class ObsCont(XMLNFe):
             self.xCampo.xml = arquivo
             self.xTexto.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Entrega(XMLNFe):
@@ -1997,7 +2326,14 @@ class Entrega(XMLNFe):
             self.hIni.xml = arquivo
             self.hFim.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class Pass(XMLNFe):
@@ -2019,7 +2355,14 @@ class Pass(XMLNFe):
         if self._le_xml(arquivo):
             self.xPass.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Fluxo(XMLNFe):
@@ -2054,7 +2397,14 @@ class Fluxo(XMLNFe):
             self.xDest.xml = arquivo
             self.xRota.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Compl(XMLNFe):
@@ -2109,7 +2459,14 @@ class Compl(XMLNFe):
             self.ObsCont = self.le_grupo('//CTe/infCte/compl/ObsCont', ObsCont, sigla_ns='cte')
             self.ObsFisco = self.le_grupo('//CTe/infCte/compl/ObsFisco', ObsFisco, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class EnderToma(XMLNFe):
@@ -2155,7 +2512,14 @@ class EnderToma(XMLNFe):
             self.cPais.xml   = arquivo
             self.xPais.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Tomador(XMLNFe):
@@ -2218,7 +2582,14 @@ class Tomador(XMLNFe):
                 self.toma4.xml = arquivo
                 self.toma.valor = self.toma4.valor
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class Ide(XMLNFe):
@@ -2334,7 +2705,14 @@ class Ide(XMLNFe):
             self.dhCont.xml  = arquivo
             self.xJust.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class InfCTe(XMLNFe):
@@ -2438,7 +2816,14 @@ class InfCTe(XMLNFe):
                 self.ide.tomador.enderToma.cPais.valor = endertoma.cPais.valor
                 self.ide.tomador.enderToma.xPais.valor = endertoma.xPais.valor
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class CTe(XMLNFe):
@@ -2470,7 +2855,14 @@ class CTe(XMLNFe):
             self.Signature.xml = self._le_noh('//CTe/sig:Signature')
             
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     def _calcula_dv(self, valor):
         soma = 0

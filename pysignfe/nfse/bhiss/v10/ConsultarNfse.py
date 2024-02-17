@@ -24,7 +24,14 @@ class Tomador(IdentificacaoTomador):
             self.CpfCnpj.xml  = arquivo
             self.InscricaoMunicipal.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class IntermediarioServico(IdentificacaoIntermediario):
@@ -41,7 +48,14 @@ class IntermediarioServico(IdentificacaoIntermediario):
             self.CpfCnpj.xml = arquivo
             self.InscricaoMunicipal.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
             
 class ConsultarNfseEnvio(XMLNFe):
@@ -84,7 +98,14 @@ class ConsultarNfseEnvio(XMLNFe):
             self.Tomador.xml = arquivo
             self.IntermediarioServico.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
     
@@ -117,4 +138,11 @@ class ConsultarNfseResposta(XMLNFe):
             self.CompNfse = self.le_grupo('[nfse]//GerarNfseResposta/CompNfse', CompNfse)
             self.ListaMensagemRetorno.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

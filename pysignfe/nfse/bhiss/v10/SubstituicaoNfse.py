@@ -21,7 +21,14 @@ class InfSubstituicaoNfse(XMLNFe):
         if self._le_xml(arquivo):
             self.NfseSubstituidora.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 class SubstituicaoNfse(XMLNFe):
     def __init__(self):
@@ -42,4 +49,11 @@ class SubstituicaoNfse(XMLNFe):
             self.InfSubstituicaoNfse.xml    = arquivo
             self.Signature.xml = self._le_noh('//Rps/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

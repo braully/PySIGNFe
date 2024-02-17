@@ -333,7 +333,14 @@ class TagCaracter(NohXML):
         if self._le_xml(arquivo):
             self.valor = self._le_tag(tag_id + self.raiz + u'/' + self.nome, propriedade=self.propriedade, ns=self.namespace, ocorrencia=ocorrencia)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     def get_text(self):
         if self.propriedade:

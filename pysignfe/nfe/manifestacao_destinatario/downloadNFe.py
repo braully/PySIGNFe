@@ -51,7 +51,14 @@ class DownloadNFe(XMLNFe):
             self.chNFe = self.le_grupo('//downloadNFe/chNFe', TagChNFe)
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class ProcNFeGrupoZip(XMLNFe):
@@ -79,7 +86,14 @@ class ProcNFeGrupoZip(XMLNFe):
             self.NFeZip.xml     = arquivo
             self.protNFeZip.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetNFe(XMLNFe):
@@ -131,7 +145,14 @@ class RetNFe(XMLNFe):
             self.procNFeZip.xml = arquivo
             self.procNFeGrupoZip.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 class RetDownloadNFe(XMLNFe):
     def __init__(self):
@@ -174,5 +195,12 @@ class RetDownloadNFe(XMLNFe):
             #self.retNFe.xml = arquivo
             self.retNFe = self.le_grupo('//retDownloadNFe/retNFe', RetNFe)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 

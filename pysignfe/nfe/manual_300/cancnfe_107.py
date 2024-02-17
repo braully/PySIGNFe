@@ -39,7 +39,14 @@ class InfCancEnviado(XMLNFe):
             self.nProt.xml = arquivo
             self.xJust.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class CancNFe(XMLNFe):
@@ -71,7 +78,14 @@ class CancNFe(XMLNFe):
             self.infCanc.xml = arquivo
             self.Signature.xml = self._le_noh('//cancNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfCancRecebido(XMLNFe):
@@ -118,7 +132,14 @@ class InfCancRecebido(XMLNFe):
             self.dhRecbto.xml = arquivo
             self.nProt.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetCancNFe(XMLNFe):
@@ -147,7 +168,14 @@ class RetCancNFe(XMLNFe):
             self.infCanc.xml   = arquivo
             self.Signature.xml = self._le_noh('//retCancNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     def protocolo_formatado(self):
         if not self.infCanc.nProt.valor:
@@ -186,4 +214,11 @@ class ProcCancNFe(XMLNFe):
             self.cancNFe.xml = arquivo
             self.retCancNFe.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

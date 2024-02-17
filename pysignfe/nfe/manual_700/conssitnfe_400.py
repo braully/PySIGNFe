@@ -100,4 +100,11 @@ class RetConsSitNFe(conssitnfe_310.RetConsSitNFe):
                         self.procEventoNFe.append(pev)
                 
                 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

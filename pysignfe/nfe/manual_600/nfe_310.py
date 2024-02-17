@@ -48,7 +48,14 @@ class IPIDevol(XMLNFe):
         if self._le_xml(arquivo):
             self.vIPIDevol.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
         
 class ImpostoDevol(XMLNFe):
@@ -146,7 +153,14 @@ class ISSQN(nfe_310.ISSQN):
             self.nProcesso.xml  = arquivo
             self.indIncentivo.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 ##NT 2015/003
 class ICMSUFDest(XMLNFe):
@@ -190,7 +204,14 @@ class ICMSUFDest(XMLNFe):
             self.vICMSUFDest.xml       = arquivo
             self.vICMSUFRemet.xml       = arquivo
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo    
 
 
 class COFINSST(nfe_310.COFINSST):
@@ -626,7 +647,14 @@ class ICMS(nfe_310.ICMS):
                 self.vBCSTDest.xml   = arquivo
                 self.vICMSSTDest.xml = arquivo
                 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class Imposto(nfe_310.Imposto):
@@ -675,7 +703,14 @@ class Imposto(nfe_310.Imposto):
             self.ICMSUFDest.xml = arquivo
             self.ISSQN.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class CIDE(nfe_310.CIDE):
@@ -726,7 +761,14 @@ class Adi(nfe_310.Adi):
             self.vDescDI      = arquivo
             self.nDraw.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class DI(nfe_310.DI):
@@ -784,7 +826,14 @@ class DI(nfe_310.DI):
                 for i in range(len(adis)):
                     self.adi[i].xml = adis[i]
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class ExportInd(nfe_310.ExportInd):
@@ -905,7 +954,14 @@ class Prod(nfe_310.Prod):
             self.comb.xml = arquivo
             self.nRECOPI.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 class Det(nfe_310.Det):
     def __init__(self):
@@ -919,7 +975,6 @@ class Det(nfe_310.Det):
         xml += self.nItem.xml
         xml += self.prod.xml
         xml += self.imposto.xml
-        # oi
         xml += self.impostoDevol.xml
         xml += self.infAdProd.xml
         xml += '</det>'
@@ -974,7 +1029,14 @@ class Exporta(nfe_310.Exporta):
             self.xLocExporta.xml = arquivo
             self.xLocDespacho.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
         
 
 class ProcRef(nfe_310.ProcRef):
@@ -1102,7 +1164,14 @@ class Transp(nfe_310.Transp):
             self.vol = self.le_grupo('//NFe/infNFe/transp/vol', Vol)
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetTrib(nfe_310.RetTrib):
@@ -1168,7 +1237,14 @@ class ICMSTot(nfe_310.ICMSTot):
             self.vNF.xml     = arquivo
             self.vTotTrib.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class Total(nfe_310.Total):
@@ -1331,7 +1407,14 @@ class InfNFe(nfe_310.InfNFe):
             self.compra.xml   = arquivo
             self.cana.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 #Informacao suplementar, apenas para NFC-e
@@ -1356,7 +1439,14 @@ class InfNFeSupl(XMLNFe):
         if self._le_xml(arquivo):
             self.qrCode.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class NFe(nfe_310.NFe):

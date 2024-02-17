@@ -52,7 +52,14 @@ class InfConsRecebido(conscad_310.InfConsRecebido):
 
             self.infCad = self.le_grupo('//retConsCad/infCons/infCad', InfCadRecebido)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetConsCad(conscad_310.RetConsCad):

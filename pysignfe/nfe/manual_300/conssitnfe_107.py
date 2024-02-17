@@ -33,7 +33,14 @@ class ConsSitNFe(XMLNFe):
             self.xServ.xml  = arquivo
             self.chNFe.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfProt(XMLNFe):
@@ -95,7 +102,14 @@ class InfProt(XMLNFe):
             self.nProt.xml     = arquivo
             self.digVal.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class RetConsSitNFe(XMLNFe):
@@ -130,4 +144,11 @@ class RetConsSitNFe(XMLNFe):
             self.infProt.xml   = self._le_noh(u'//retConsSitNFe/infProt')
             self.Signature.xml = self._le_noh(u'//retConsSitNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

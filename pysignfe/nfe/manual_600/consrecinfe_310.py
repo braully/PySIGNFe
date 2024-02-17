@@ -54,7 +54,14 @@ class InfProt(consrecinfe_310.InfProt):
             self.cStat.xml     = arquivo
             self.xMotivo.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class ProtNFe(consrecinfe_310.ProtNFe):
@@ -83,7 +90,14 @@ class ProtNFe(consrecinfe_310.ProtNFe):
             self.infProt.xml = self._le_noh(u'//protNFe/infProt')
             self.Signature.xml = self._le_noh(u'//protNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     def protocolo_formatado_nfce(self):
         if not self.infProt.nProt.valor:
@@ -143,7 +157,14 @@ class RetConsReciNFe(consrecinfe_310.RetConsReciNFe):
             for pn in self.protNFe:
                 self.dic_protNFe[pn.infProt.chNFe.valor] = pn
        
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     
 class ProcNFe(consrecinfe_310.ProcNFe):

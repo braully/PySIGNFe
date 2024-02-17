@@ -36,7 +36,14 @@ class EnviNFe(XMLNFe):
             
         return self.xml
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 class InfRec(XMLNFe):
@@ -64,7 +71,14 @@ class InfRec(XMLNFe):
             self.dhRecbto.xml = arquivo
             self.tMed.xml     = arquivo
        
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class RetEnviNFe(XMLNFe):
@@ -102,5 +116,12 @@ class RetEnviNFe(XMLNFe):
             self.cUF.xml      = arquivo
             self.infRec.xml   = arquivo
        
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
              

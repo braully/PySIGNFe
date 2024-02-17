@@ -28,7 +28,14 @@ class NFeCabecMsg(XMLNFe):
 
         return self.xml
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 class NFeDadosMsg(XMLNFe):
     def __init__(self):
@@ -47,7 +54,14 @@ class NFeDadosMsg(XMLNFe):
     def set_xml(self, arquivo):
         pass
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
 
 
@@ -80,7 +94,14 @@ class SOAPEnvio(XMLNFe):
     def set_xml(self):
         pass
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     def get_header(self):
         header = self._header
@@ -112,4 +133,11 @@ class SOAPRetorno(XMLNFe):
         if self._le_xml(arquivo):
             self.resposta.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo

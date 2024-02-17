@@ -35,7 +35,14 @@ class EmiOcc(XMLNFe):
             self.UF.xml     = arquivo
             self.fone.xml   = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Occ(XMLNFe):
@@ -66,7 +73,14 @@ class Occ(XMLNFe):
             self.dEmi.xml   = arquivo
             self.emiOcc.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Rodo(XMLNFe):
@@ -90,7 +104,14 @@ class Rodo(XMLNFe):
             self.RNTRC.xml = arquivo
             self.occ = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/rodo/occ', Occ, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfTotAP(XMLNFe):
@@ -112,7 +133,14 @@ class InfTotAP(XMLNFe):
             self.qTotProd.xml = arquivo
             self.uniAP.xml    = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Peri(XMLNFe):
@@ -139,7 +167,14 @@ class Peri(XMLNFe):
             self.qTotEmb.xml   = arquivo
             self.infTotAP.xml  = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Tarifa(XMLNFe):
@@ -164,7 +199,14 @@ class Tarifa(XMLNFe):
             self.cTar.xml   = arquivo
             self.vTar.xml   = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class TagCInfManu(TagCaracter):
@@ -196,7 +238,14 @@ class NatCarga(XMLNFe):
             self.xDime.xml = arquivo
             self.cInfManu = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aereo/natCarga/cInfManu', TagCInfManu, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Aereo(XMLNFe):
@@ -232,7 +281,14 @@ class Aereo(XMLNFe):
             self.tarifa.xml     = arquivo
             self.peri = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aereo/peri', Peri, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfNFeAquav(XMLNFe):
@@ -256,7 +312,14 @@ class InfNFeAquav(XMLNFe):
             self.chave.xml = arquivo
             self.unidRat.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
 
 class InfNFAquav(XMLNFe):
@@ -283,7 +346,14 @@ class InfNFAquav(XMLNFe):
             self.nDoc.xml = arquivo
             self.unidRat.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class InfDocAquav(XMLNFe):
@@ -309,7 +379,14 @@ class InfDocAquav(XMLNFe):
             self.infNF = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aquav/detCont/infDoc/infNF', InfNFAquav, sigla_ns='cte')
             self.infNFe = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aquav/detCont/infDoc/infNFe', InfNFeAquav, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Lacre(XMLNFe):
@@ -330,7 +407,14 @@ class Lacre(XMLNFe):
         if self._le_xml(arquivo):
             self.nLacre.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     
 class DetCont(XMLNFe):
@@ -360,7 +444,14 @@ class DetCont(XMLNFe):
             self.infDoc.xml = arquivo
             self.lacre = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aquav/detCont/lacre', Lacre, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     
 class Balsa(XMLNFe):
@@ -381,7 +472,14 @@ class Balsa(XMLNFe):
         if self._le_xml(arquivo):
             self.xBalsa.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Aquav(XMLNFe):
@@ -424,7 +522,14 @@ class Aquav(XMLNFe):
             self.balsa = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aquav/balsa', Balsa, sigla_ns='cte')
             self.detCont = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/aquav/detCont', DetCont, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
 
     
 class EnderFerro(XMLNFe):
@@ -464,7 +569,14 @@ class EnderFerro(XMLNFe):
             self.CEP.xml     = arquivo
             self.UF.xml      = arquivo
             
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo    
 
 
 class FerroEnv(XMLNFe):
@@ -497,7 +609,14 @@ class FerroEnv(XMLNFe):
             self.xNome.xml  = arquivo
             self.enderFerro.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class TrafMut(XMLNFe):
@@ -532,7 +651,14 @@ class TrafMut(XMLNFe):
             self.chCTeFerroOrigem.xml = arquivo
             self.ferroEnv = self.le_grupo('//CTe/infCte/infCTeNorm/infModal/ferrov/trafMut/ferroEnv', FerroEnv, sigla_ns='cte')
             
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo    
     
     
 class Ferrov(XMLNFe):
@@ -557,7 +683,14 @@ class Ferrov(XMLNFe):
             self.trafMut.xml  = arquivo
             self.fluxo.xml  = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Duto(XMLNFe):
@@ -582,7 +715,14 @@ class Duto(XMLNFe):
             self.dIni.xml = arquivo
             self.dFim.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class InfSeg(XMLNFe):
@@ -604,7 +744,14 @@ class InfSeg(XMLNFe):
             self.xSeg.xml = arquivo
             self.CNPJ.xml  = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Seg(XMLNFe):
@@ -631,7 +778,14 @@ class Seg(XMLNFe):
             self.nApol.xml  = arquivo
             self.nAver.xml  = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
     
 class Multimodal(XMLNFe):
@@ -656,5 +810,12 @@ class Multimodal(XMLNFe):
             self.indNegociavel.xml = arquivo
             self.seg.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self._xml
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+        self._xml = arquivo
     
