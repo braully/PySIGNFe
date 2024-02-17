@@ -803,13 +803,13 @@ class TagDecimal(TagCaracter):
             print('len(decimal) < self.decimais[0]: ', len(decimal) < self.decimais[0], 1)
             print('############################################################')
             
-            # return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
-            raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
+            return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
+            # raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
 
     def _testa_decimais_maximo(self, decimal):
         if self.decimais[1] and len(decimal) > self.decimais[1]:
-            # return TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
-            raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
+            return TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
+            # raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
 
     def _valida(self, valor):
         self.alertas = []
