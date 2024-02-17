@@ -1770,6 +1770,10 @@ class NFe(nfe_200.NFe):
     #     #
     #     self.infNFe.ide.cNF.valor = self.chave[35:43]
     def gera_nova_chave(self):
+
+        if not self.infNFe.ide.dhEmi.valor:
+            self.infNFe.ide.dhEmi.valor = datetime.datetime.now()
+
         chave = unicode(self.infNFe.ide.cUF.valor).zfill(2)
         chave += unicode(self.infNFe.ide.dhEmi.valor.strftime(u'%y%m')).zfill(4)
         chave += unicode(self.infNFe.emit.CNPJ.valor).zfill(14)
