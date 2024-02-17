@@ -886,11 +886,9 @@ class XMLNFe(NohXML):
     def validar(self):
         arquivo_esquema = self.caminho_esquema + self.arquivo_esquema
         print(f'arquivo validador: {arquivo_esquema}')
-        print(f'xml: {self.xml}')
 
         # Aqui é importante remover a declaração do encoding
         # para evitar erros de conversão unicode para ascii
-        exit()
         xml = tira_abertura(self.xml).encode(u'utf-8')
         
         esquema = etree.XMLSchema(etree.parse(arquivo_esquema))
@@ -962,6 +960,8 @@ def por_acentos(texto):
     return texto
 
 def tira_abertura(texto):
+    print(f'texto: {texto}')
+    exit()
     #Respostas de NFS-es podem vir com mais de uma abertura
     texto = re.sub(r'<\?[^\?>]+\?>', '', texto)
     return texto
