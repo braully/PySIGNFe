@@ -793,18 +793,16 @@ class TagDecimal(TagCaracter):
         return texto
 
     def _testa_decimais_minimo(self, decimal):
-        if self.nome == 'vICMSDeson':
+        if self.decimais[0] and len(decimal) < self.decimais[0]:
             print('############################################################')
             print('novo decimal: ', decimal)
             print('len(decimal): ', len(decimal))
             print('self.decimais: ', self.decimais)
             print('self.decimais[0]: ', self.decimais[0])
             print('self.demais[0]: ', True if self.decimais[0] else False)
-            if self.decimais[0]:
-                print('len(decimal) < self.decimais[0]: ', len(decimal) < self.decimais[0])
+            print('len(decimal) < self.decimais[0]: ', len(decimal) < self.decimais[0])
             print('############################################################')
-        
-        if self.decimais[0] and len(decimal) < self.decimais[0]:
+            
             # return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
             raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
 
