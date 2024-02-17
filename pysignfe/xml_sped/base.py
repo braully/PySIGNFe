@@ -333,14 +333,7 @@ class TagCaracter(NohXML):
         if self._le_xml(arquivo):
             self.valor = self._le_tag(tag_id + self.raiz + u'/' + self.nome, propriedade=self.propriedade, ns=self.namespace, ocorrencia=ocorrencia)
 
-    @property
-    def xml(self):
-        return self._xml
-
-    @xml.setter
-    def xml(self, arquivo):
-        self.set_xml(arquivo)
-        self._xml = arquivo
+    xml = property(get_xml, set_xml)
 
     def get_text(self):
         if self.propriedade:
@@ -793,23 +786,14 @@ class TagDecimal(TagCaracter):
         return texto
 
     def _testa_decimais_minimo(self, decimal):
-        if self.decimais[0] and len(decimal) < self.decimais[0]:
-            print('############################################################', 1)
-            print('novo decimal: ', decimal, 1)
-            print('len(decimal): ', len(decimal), 1)
-            print('self.decimais: ', self.decimais, 1)
-            print('self.decimais[0]: ', self.decimais[0], 1)
-            print('self.demais[0]: ', True if self.decimais[0] else False, 1)
-            print('len(decimal) < self.decimais[0]: ', len(decimal) < self.decimais[0], 1)
-            print('############################################################')
-            
-            return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
-            # raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
+        if self.decimais[0] and (len(decimal) < self.decimais[0]):
+            #return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
+            raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
 
     def _testa_decimais_maximo(self, decimal):
-        if self.decimais[1] and len(decimal) > self.decimais[1]:
-            return TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
-            # raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
+        if self.decimais[1] and (len(decimal) > self.decimais[1]):
+            #return TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
+            raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_max=self.decimais[1])
 
     def _valida(self, valor):
         self.alertas = []
@@ -976,7 +960,7 @@ def por_acentos(texto):
 
 def tira_abertura(texto):
     #Respostas de NFS-es podem vir com mais de uma abertura
-    texto = re.sub(r'<\?[^\?>]+\?>', '', str(texto))
+    texto = re.sub(r'<\?[^\?>]+\?>', '', texto)
     return texto
 
 def _tipo_para_string(valor, tipo, obrigatorio, dec_min):

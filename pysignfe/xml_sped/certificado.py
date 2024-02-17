@@ -52,7 +52,6 @@ class Certificado(object):
         if not isinstance(doc, XMLNFe):
             raise ValueError('O documento nao e do tipo esperado: XMLNFe')
 
-        print(doc.xml)
         # Realiza a assinatura
         xml = self.assina_xml(doc.xml)
 
