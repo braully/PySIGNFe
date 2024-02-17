@@ -1489,6 +1489,7 @@ class Ide(nfe_310.Ide):
             self.verProc.xml = arquivo
             self.dhCont.xml  = arquivo
             self.xJust.xml   = arquivo
+            self._xml = arquivo
 
     @property
     def xml(self):
@@ -1497,7 +1498,6 @@ class Ide(nfe_310.Ide):
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
 
 
 class InfNFe(nfe_310old.InfNFe):
