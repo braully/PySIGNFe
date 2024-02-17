@@ -794,13 +794,13 @@ class TagDecimal(TagCaracter):
 
     def _testa_decimais_minimo(self, decimal):
         if self.decimais[0] and len(decimal) < self.decimais[0]:
-            print('############################################################')
-            print('novo decimal: ', decimal)
-            print('len(decimal): ', len(decimal))
-            print('self.decimais: ', self.decimais)
-            print('self.decimais[0]: ', self.decimais[0])
-            print('self.demais[0]: ', True if self.decimais[0] else False)
-            print('len(decimal) < self.decimais[0]: ', len(decimal) < self.decimais[0])
+            print('############################################################', 1)
+            print('novo decimal: ', decimal, 1)
+            print('len(decimal): ', len(decimal), 1)
+            print('self.decimais: ', self.decimais, 1)
+            print('self.decimais[0]: ', self.decimais[0], 1)
+            print('self.demais[0]: ', True if self.decimais[0] else False, 1)
+            print('len(decimal) < self.decimais[0]: ', len(decimal) < self.decimais[0], 1)
             print('############################################################')
             
             # return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
