@@ -976,7 +976,7 @@ def por_acentos(texto):
 
 def tira_abertura(texto):
     #Respostas de NFS-es podem vir com mais de uma abertura
-    texto = re.sub(r'<\?[^\?>]+\?>', '', texto)
+    texto = re.sub(r'<\?[^\?>]+\?>', '', str(texto))
     return texto
 
 def _tipo_para_string(valor, tipo, obrigatorio, dec_min):
