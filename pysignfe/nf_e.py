@@ -84,10 +84,8 @@ class nf_e(NotaFiscal):
         n.auto_preencher_campos(ambiente=ambiente, estado=estado)
         
         if consumidor:
-            print('preencher_campos_nfce')
             n.preencher_campos_nfce()
         else:
-            print(f'preencher_campos_nfe: {n.__dict__}')
             n.preencher_campos_nfe()
             
         processo =  p.gerar_xml([n], numero_lote=numero_lote)
