@@ -52,6 +52,7 @@ class Certificado(object):
         if not isinstance(doc, XMLNFe):
             raise ValueError('O documento nao e do tipo esperado: XMLNFe')
 
+        print(doc.xml)
         # Realiza a assinatura
         xml = self.assina_xml(doc.xml)
 
@@ -128,14 +129,7 @@ class Certificado(object):
         from signxml import methods
 
         xml = self._prepara_doc_xml(xml)
-        try:
-        
-            doc_xml = lxml.etree.fromstring(xml.encode('utf-8'))
-        except Exception as e:
-            print("##################################")
-            print(xml)
-            print("##################################")
-        return
+        doc_xml = lxml.etree.fromstring(xml.encode('utf-8'))
         
         #buscando chave de acesso no documento e retiranto TAG Signature
         chave_de_acesso = self._ler_chave_acesso(doc_xml)
