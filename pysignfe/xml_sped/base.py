@@ -793,7 +793,7 @@ class TagDecimal(TagCaracter):
         return texto
 
     def _testa_decimais_minimo(self, decimal):
-        print('decimal: ', decimal)
+        print('novo decimal: ', decimal)
         print('self.decimais: ', self.decimais)
         print('self.decimais[0]: ', self.decimais[0])
         print('len(decimal): ', len(decimal))
