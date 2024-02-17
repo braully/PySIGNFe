@@ -54,6 +54,7 @@ class Certificado(object):
 
         # Realiza a assinatura
         xml = self.assina_xml(doc.xml)
+        print(xml)
 
         # Devolve os valores para a instância doc
         doc.Signature.xml = xml
