@@ -3,7 +3,7 @@
 from pysignfe.corr_unicode import *
 import os
 import locale
-import hashlib
+import datetime
 
 from pysignfe.xml_sped import *
 from pysignfe.nfe.manual_401 import nfe_200
