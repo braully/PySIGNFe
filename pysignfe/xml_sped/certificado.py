@@ -128,10 +128,14 @@ class Certificado(object):
         from signxml import methods
 
         xml = self._prepara_doc_xml(xml)
-        print("##################################")
-        print(xml)
-        print("##################################")
-        doc_xml = lxml.etree.fromstring(xml.encode('utf-8'))
+        try:
+        
+            doc_xml = lxml.etree.fromstring(xml.encode('utf-8'))
+        except Exception as e:
+            print("##################################")
+            print(xml)
+            print("##################################")
+        return
         
         #buscando chave de acesso no documento e retiranto TAG Signature
         chave_de_acesso = self._ler_chave_acesso(doc_xml)
