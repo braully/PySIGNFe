@@ -919,6 +919,7 @@ class Det(nfe_310.Det):
         xml += self.nItem.xml
         xml += self.prod.xml
         xml += self.imposto.xml
+        # oi
         xml += self.impostoDevol.xml
         xml += self.infAdProd.xml
         xml += '</det>'
