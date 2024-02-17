@@ -1296,7 +1296,7 @@ class ISSQNTot(nfe_200.ISSQNTot):
 class ICMSTot(nfe_200.ICMSTot):
     def __init__(self):
         super(ICMSTot, self).__init__()
-        self.vICMSDeson  = TagDecimal(nome=u'vICMSDeson'  , codigo=u'W04a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//NFe/infNFe/total/ICMSTot',valor=u'0.00')
+        self.vICMSDeson  = TagDecimal(nome=u'vICMSDeson'  , codigo=u'W04a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//NFe/infNFe/total/ICMSTot', valor=u'0.00')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)

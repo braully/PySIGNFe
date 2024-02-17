@@ -793,6 +793,10 @@ class TagDecimal(TagCaracter):
         return texto
 
     def _testa_decimais_minimo(self, decimal):
+        print('decimal: ', decimal)
+        print('self.decimais: ', self.decimais)
+        print('self.decimais[0]: ', self.decimais[0])
+        print('len(decimal): ', len(decimal))
         if self.decimais[0] and (len(decimal) < self.decimais[0]):
             #return TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
             raise TamanhoInvalido(self.codigo, self.nome, decimal, dec_min=self.decimais[0])
