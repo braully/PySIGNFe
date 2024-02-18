@@ -41,12 +41,12 @@ class InfCancEnviado(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class CancNFe(XMLNFe):
@@ -80,12 +80,12 @@ class CancNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InfCancRecebido(XMLNFe):
@@ -134,12 +134,12 @@ class InfCancRecebido(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetCancNFe(XMLNFe):
@@ -170,12 +170,12 @@ class RetCancNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     def protocolo_formatado(self):
         if not self.infCanc.nProt.valor:
@@ -216,9 +216,9 @@ class ProcCancNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+

@@ -24,12 +24,12 @@ class DetEvento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfEventoEnviado(XMLNFe):
@@ -85,12 +85,12 @@ class InfEventoEnviado(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Evento(XMLNFe):
@@ -123,12 +123,12 @@ class Evento(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class EnvEvento(XMLNFe):
@@ -159,12 +159,12 @@ class EnvEvento(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InfEventoRecebido(XMLNFe):
@@ -235,12 +235,12 @@ class InfEventoRecebido(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetEvento(XMLNFe):
@@ -271,12 +271,12 @@ class RetEvento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class RetEnvEvento(XMLNFe):
@@ -340,12 +340,12 @@ class RetEnvEvento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class ProcEventoNFe(XMLNFe):
@@ -377,9 +377,9 @@ class ProcEventoNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+

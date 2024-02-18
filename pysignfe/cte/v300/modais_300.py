@@ -37,12 +37,12 @@ class EmiOcc(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Occ(XMLNFe):
@@ -75,12 +75,12 @@ class Occ(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Rodo(XMLNFe):
@@ -106,12 +106,12 @@ class Rodo(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfTotAP(XMLNFe):
@@ -135,12 +135,12 @@ class InfTotAP(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Peri(XMLNFe):
@@ -169,12 +169,12 @@ class Peri(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Tarifa(XMLNFe):
@@ -201,12 +201,12 @@ class Tarifa(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class TagCInfManu(TagCaracter):
@@ -240,12 +240,12 @@ class NatCarga(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Aereo(XMLNFe):
@@ -283,12 +283,12 @@ class Aereo(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfNFeAquav(XMLNFe):
@@ -314,12 +314,12 @@ class InfNFeAquav(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfNFAquav(XMLNFe):
@@ -348,12 +348,12 @@ class InfNFAquav(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class InfDocAquav(XMLNFe):
@@ -381,12 +381,12 @@ class InfDocAquav(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Lacre(XMLNFe):
@@ -409,12 +409,12 @@ class Lacre(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     
 class DetCont(XMLNFe):
@@ -446,12 +446,12 @@ class DetCont(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     
 class Balsa(XMLNFe):
@@ -474,12 +474,12 @@ class Balsa(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Aquav(XMLNFe):
@@ -524,12 +524,12 @@ class Aquav(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     
 class EnderFerro(XMLNFe):
@@ -571,12 +571,12 @@ class EnderFerro(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo    
+    
 
 
 class FerroEnv(XMLNFe):
@@ -611,12 +611,12 @@ class FerroEnv(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class TrafMut(XMLNFe):
@@ -653,12 +653,12 @@ class TrafMut(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo    
+    
     
     
 class Ferrov(XMLNFe):
@@ -685,12 +685,12 @@ class Ferrov(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Duto(XMLNFe):
@@ -717,12 +717,12 @@ class Duto(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class InfSeg(XMLNFe):
@@ -746,12 +746,12 @@ class InfSeg(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Seg(XMLNFe):
@@ -780,12 +780,12 @@ class Seg(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class Multimodal(XMLNFe):
@@ -812,10 +812,10 @@ class Multimodal(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     

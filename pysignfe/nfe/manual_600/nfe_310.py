@@ -50,12 +50,12 @@ class IPIDevol(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
         
 class ImpostoDevol(XMLNFe):
@@ -81,12 +81,12 @@ class ImpostoDevol(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ISSQN(nfe_310.ISSQN):
@@ -155,12 +155,12 @@ class ISSQN(nfe_310.ISSQN):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 ##NT 2015/003
 class ICMSUFDest(XMLNFe):
@@ -206,12 +206,12 @@ class ICMSUFDest(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo    
+    
 
 
 class COFINSST(nfe_310.COFINSST):
@@ -649,12 +649,12 @@ class ICMS(nfe_310.ICMS):
                 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Imposto(nfe_310.Imposto):
@@ -705,12 +705,12 @@ class Imposto(nfe_310.Imposto):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class CIDE(nfe_310.CIDE):
@@ -763,12 +763,12 @@ class Adi(nfe_310.Adi):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class DI(nfe_310.DI):
@@ -828,12 +828,12 @@ class DI(nfe_310.DI):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ExportInd(nfe_310.ExportInd):
@@ -956,12 +956,12 @@ class Prod(nfe_310.Prod):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 class Det(nfe_310.Det):
     def __init__(self):
@@ -990,12 +990,12 @@ class Det(nfe_310.Det):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class Compra(nfe_310.Compra):
@@ -1031,12 +1031,12 @@ class Exporta(nfe_310.Exporta):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
         
 
 class ProcRef(nfe_310.ProcRef):
@@ -1166,12 +1166,12 @@ class Transp(nfe_310.Transp):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetTrib(nfe_310.RetTrib):
@@ -1239,12 +1239,12 @@ class ICMSTot(nfe_310.ICMSTot):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Total(nfe_310.Total):
@@ -1409,12 +1409,12 @@ class InfNFe(nfe_310.InfNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 #Informacao suplementar, apenas para NFC-e
@@ -1441,12 +1441,12 @@ class InfNFeSupl(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class NFe(nfe_310.NFe):

@@ -26,12 +26,12 @@ class Tomador(IdentificacaoTomador):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
 class IntermediarioServico(IdentificacaoIntermediario):
@@ -50,12 +50,12 @@ class IntermediarioServico(IdentificacaoIntermediario):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
             
 class ConsultarNfseEnvio(XMLNFe):
@@ -100,12 +100,12 @@ class ConsultarNfseEnvio(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     
     
@@ -140,9 +140,8 @@ class ConsultarNfseResposta(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo

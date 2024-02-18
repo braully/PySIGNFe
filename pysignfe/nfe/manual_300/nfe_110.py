@@ -51,12 +51,12 @@ class ISSQN(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class COFINSST(XMLNFe):
@@ -96,12 +96,12 @@ class COFINSST(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class TagCSTCOFINS(TagCaracter):
@@ -274,12 +274,12 @@ class COFINS(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class PISST(XMLNFe):
@@ -319,12 +319,12 @@ class PISST(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class TagCSTPIS(TagCaracter):
@@ -497,12 +497,12 @@ class PIS(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class II(XMLNFe):
@@ -538,12 +538,12 @@ class II(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class TagCSTIPI(TagCaracter):
@@ -696,12 +696,12 @@ class IPI(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class TagCSTICMS(TagCaracter):
@@ -1023,12 +1023,12 @@ class ICMS(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Imposto(XMLNFe):
@@ -1070,12 +1070,12 @@ class Imposto(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ICMSCons(XMLNFe):
@@ -1105,12 +1105,12 @@ class ICMSCons(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ICMSInter(XMLNFe):
@@ -1137,12 +1137,12 @@ class ICMSInter(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ICMSComb(XMLNFe):
@@ -1175,12 +1175,12 @@ class ICMSComb(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class CIDE(XMLNFe):
@@ -1210,12 +1210,12 @@ class CIDE(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Comb(XMLNFe):
@@ -1260,12 +1260,12 @@ class Comb(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Arma(XMLNFe):
@@ -1298,12 +1298,12 @@ class Arma(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Med(XMLNFe):
@@ -1339,12 +1339,12 @@ class Med(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class VeicProd(XMLNFe):
@@ -1431,12 +1431,12 @@ class VeicProd(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Adi(XMLNFe):
@@ -1466,12 +1466,12 @@ class Adi(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class DI(XMLNFe):
@@ -1528,12 +1528,12 @@ class DI(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Prod(XMLNFe):
@@ -1645,12 +1645,12 @@ class Prod(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Det(XMLNFe):
@@ -1679,12 +1679,12 @@ class Det(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     def descricao_produto_formatada(self):
         formatado = self.prod.xProd.valor.replace(u'|', u'<br />')
@@ -1728,12 +1728,12 @@ class Compra(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Exporta(XMLNFe):
@@ -1760,12 +1760,12 @@ class Exporta(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ProcRef(XMLNFe):
@@ -1792,12 +1792,12 @@ class ProcRef(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ObsFisco(XMLNFe):
@@ -1824,12 +1824,12 @@ class ObsFisco(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ObsCont(XMLNFe):
@@ -1856,12 +1856,12 @@ class ObsCont(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InfAdic(XMLNFe):
@@ -1910,12 +1910,12 @@ class InfAdic(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Dup(XMLNFe):
@@ -1945,12 +1945,12 @@ class Dup(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Fat(XMLNFe):
@@ -1983,12 +1983,12 @@ class Fat(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Cobr(XMLNFe):
@@ -2024,12 +2024,12 @@ class Cobr(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Lacres(XMLNFe):
@@ -2053,12 +2053,12 @@ class Lacres(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Vol(XMLNFe):
@@ -2130,12 +2130,12 @@ class Vol(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Reboque(XMLNFe):
@@ -2165,12 +2165,12 @@ class Reboque(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class VeicTransp(XMLNFe):
@@ -2200,12 +2200,12 @@ class VeicTransp(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetTransp(XMLNFe):
@@ -2244,12 +2244,12 @@ class RetTransp(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Transporta(XMLNFe):
@@ -2291,12 +2291,12 @@ class Transporta(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Transp(XMLNFe):
@@ -2344,12 +2344,12 @@ class Transp(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetTrib(XMLNFe):
@@ -2391,12 +2391,12 @@ class RetTrib(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ISSQNTot(XMLNFe):
@@ -2432,12 +2432,12 @@ class ISSQNTot(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class ICMSTot(XMLNFe):
@@ -2499,12 +2499,12 @@ class ICMSTot(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Total(XMLNFe):
@@ -2531,12 +2531,12 @@ class Total(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Entrega(XMLNFe):
@@ -2582,12 +2582,12 @@ class Entrega(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Retirada(XMLNFe):
@@ -2633,12 +2633,12 @@ class Retirada(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class EnderDest(XMLNFe):
@@ -2689,12 +2689,12 @@ class EnderDest(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Dest(XMLNFe):
@@ -2734,12 +2734,12 @@ class Dest(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Avulsa(XMLNFe):
@@ -2793,12 +2793,12 @@ class Avulsa(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class EnderEmit(XMLNFe):
@@ -2849,12 +2849,12 @@ class EnderEmit(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 class Emit(XMLNFe):
     def __init__(self):
@@ -2899,12 +2899,12 @@ class Emit(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RefNF(XMLNFe):
@@ -2943,12 +2943,12 @@ class RefNF(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class NFRef(XMLNFe):
@@ -2979,12 +2979,12 @@ class NFRef(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class Ide(XMLNFe):
@@ -3073,12 +3073,12 @@ class Ide(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InfNFe(XMLNFe):
@@ -3150,12 +3150,12 @@ class InfNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class NFe(XMLNFe):
@@ -3193,12 +3193,12 @@ class NFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     def _calcula_dv(self, valor):
         soma = 0

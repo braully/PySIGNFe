@@ -70,12 +70,12 @@ class InfEventoEnviado(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class EnvEvento(XMLNFe):
@@ -115,12 +115,12 @@ class EnvEvento(XMLNFe):
             self.Signature.xml = self._le_noh('//envEvento/sig:Signature')
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InfEventoRecebido(XMLNFe):
@@ -191,12 +191,12 @@ class InfEventoRecebido(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetEnvEvento(XMLNFe):
@@ -256,12 +256,12 @@ class RetEnvEvento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 class ProcEventoNFe(XMLNFe):
     def __init__(self):
@@ -302,9 +302,9 @@ class ProcEventoNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+

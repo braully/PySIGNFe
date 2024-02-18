@@ -23,12 +23,12 @@ class InfSubstituicaoNfse(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 class SubstituicaoNfse(XMLNFe):
     def __init__(self):
@@ -51,9 +51,8 @@ class SubstituicaoNfse(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo

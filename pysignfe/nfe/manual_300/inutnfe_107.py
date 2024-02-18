@@ -54,12 +54,12 @@ class InfInutEnviado(XMLNFe):
         
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InutNFe(XMLNFe):
@@ -95,12 +95,12 @@ class InutNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     def monta_chave(self):
         chave = unicode(self.infInut.cUF.valor).zfill(2)
@@ -190,12 +190,12 @@ class InfInutRecebido(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     
 class RetInutNFe(XMLNFe):
@@ -228,12 +228,12 @@ class RetInutNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     def monta_chave(self):
         chave = unicode(self.infInut.cUF.valor).zfill(2)
@@ -278,9 +278,9 @@ class ProcInutNFe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+

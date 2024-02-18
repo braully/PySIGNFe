@@ -29,12 +29,12 @@ class IdentificacaoOrgaoGerador(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
         
 
 class DadosPrestador(XMLNFe):
@@ -66,12 +66,12 @@ class DadosPrestador(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
         
         
 class InfNfse(XMLNFe):
@@ -150,12 +150,12 @@ class InfNfse(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo   
+   
         
 
 class NFSe(XMLNFe):
@@ -182,12 +182,12 @@ class NFSe(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo 
+ 
     
 class CompNfse(XMLNFe):
     def __init__(self):
@@ -215,9 +215,8 @@ class CompNfse(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo

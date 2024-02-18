@@ -28,12 +28,12 @@ class IdentificacaoNfse(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfPedidoCancelamento(XMLNFe):
@@ -59,12 +59,12 @@ class InfPedidoCancelamento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo          
+          
     
 
 class PedidoCancelamento(XMLNFe):
@@ -90,12 +90,12 @@ class PedidoCancelamento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo      
+      
 
 class ConfirmacaoCancelamento(XMLNFe):
     def __init__(self):
@@ -119,12 +119,12 @@ class ConfirmacaoCancelamento(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo  
+  
     
 
 class CancelamentoNfse(XMLNFe):
@@ -148,9 +148,9 @@ class CancelamentoNfse(XMLNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo    
+    

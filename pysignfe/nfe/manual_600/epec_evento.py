@@ -40,12 +40,12 @@ class Dest(XMLNFe):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class DetEventoEPEC(DetEvento):
@@ -99,12 +99,12 @@ class DetEventoEPEC(DetEvento):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfEventoEnviadoEPEC(InfEventoEnviado):
@@ -146,12 +146,12 @@ class EnvEventoEPEC(EnvEvento):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class TagChNFePend(TagCaracter):
@@ -215,12 +215,12 @@ class InfEventoRecebidoEPEC(InfEventoRecebido):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class RetEventoEPEC(RetEvento):
@@ -271,12 +271,12 @@ class RetEnvEventoEPEC(RetEnvEvento):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class ProcEventoNFeEPEC(ProcEventoNFe):

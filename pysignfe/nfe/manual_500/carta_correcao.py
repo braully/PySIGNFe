@@ -36,12 +36,12 @@ class DetEventoCCe(DetEvento):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class InfEventoEnviadoCCe(InfEventoEnviado):
@@ -86,12 +86,12 @@ class EnvEventoCCe(EnvEvento):
             
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
 
 class InfEventoRecebidoCCe(InfEventoRecebido):
@@ -147,12 +147,12 @@ class RetEnvEventoCCe(RetEnvEvento):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class ProcEventoNFeCCe(ProcEventoNFe):

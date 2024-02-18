@@ -56,12 +56,12 @@ class InfProt(consrecinfe_310.InfProt):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
 
 class ProtNFe(consrecinfe_310.ProtNFe):
@@ -92,12 +92,12 @@ class ProtNFe(consrecinfe_310.ProtNFe):
 
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
     
     def protocolo_formatado_nfce(self):
         if not self.infProt.nProt.valor:
@@ -159,12 +159,12 @@ class RetConsReciNFe(consrecinfe_310.RetConsReciNFe):
        
     @property
     def xml(self):
-        return self._xml
+        return self.get_xml()
 
     @xml.setter
     def xml(self, arquivo):
         self.set_xml(arquivo)
-        self._xml = arquivo
+
 
     
 class ProcNFe(consrecinfe_310.ProcNFe):
