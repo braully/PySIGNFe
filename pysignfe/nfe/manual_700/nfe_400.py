@@ -1499,7 +1499,6 @@ class Ide(nfe_310.Ide):
         self.set_xml(arquivo)
 
 
-
 class InfNFe(nfe_310old.InfNFe):
     def __init__(self):
         super(InfNFe, self).__init__()
