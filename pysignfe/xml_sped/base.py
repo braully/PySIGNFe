@@ -960,8 +960,7 @@ def por_acentos(texto):
     return texto
 
 def tira_abertura(texto):
-    print(f'texto: {texto}')
-    # exit()
+    # print(f'texto: {texto}')
     #Respostas de NFS-es podem vir com mais de uma abertura
     texto = re.sub(r'<\?[^\?>]+\?>', '', texto)
     return texto
