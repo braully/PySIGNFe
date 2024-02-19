@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from pysignfe.xml_sped import *
-from pysignfe.nfe.manual_600 import ESQUEMA_ATUAL
+from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 from pysignfe.nfe.manual_500 import carta_correcao
 
 import os

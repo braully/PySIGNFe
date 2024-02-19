@@ -3,7 +3,7 @@
 import os
 from pysignfe.xml_sped import *
 from pysignfe.nfe.manual_500 import inutnfe_310
-from pysignfe.nfe.manual_600 import ESQUEMA_ATUAL
+from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 
 DIRNAME = os.path.dirname(__file__)
 

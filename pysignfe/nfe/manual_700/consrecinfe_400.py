@@ -2,9 +2,9 @@
 import os
 
 from pysignfe.nfe.manual_500 import consrecinfe_310
-from pysignfe.nfe.manual_600 import ESQUEMA_ATUAL
+from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 from pysignfe.xml_sped import *
-from pysignfe.nfe.manual_600.nfe_310 import NFe
+from pysignfe.nfe.manual_700.nfe_400 import NFe
 
 DIRNAME = os.path.dirname(__file__)
 
