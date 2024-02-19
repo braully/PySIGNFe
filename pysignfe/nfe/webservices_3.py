@@ -540,8 +540,8 @@ UFPR = {
         WS_NFE_CANCELAMENTO     : u'nfe/NFeCancelamento4',
         #WS_NFE_INUTILIZACAO     : u'nfe/NFeInutilizacao4',
         WS_NFE_INUTILIZACAO     : u'nfe/NFeInutilizacao3',
-        #WS_NFE_CONSULTA         : u'nfe/NFeConsulta4',
-        WS_NFE_CONSULTA         : u'nfe/NFeConsulta3',
+        WS_NFE_CONSULTA         : u'nfe/NFeConsulta4',
+        # WS_NFE_CONSULTA         : u'nfe/NFeConsulta3',
         #WS_NFE_SITUACAO         : u'nfe/NFeStatusServico2'
         WS_NFE_SITUACAO         : u'nfe/NFeStatusServico3',
         WS_NFE_CONSULTA_CADASTRO: u'nfe/CadConsultaCadastro4',
