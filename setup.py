@@ -3,7 +3,7 @@ import os
 
 setup(
     name="PySIGNFe",
-    version="0.1.0",
+    version="0.1.1",
     description=("Biblioteca para implementacao de notas fiscais eletronicas"),
     license="LGPL",
     keywords="NF-e NFS-e CT-e",
