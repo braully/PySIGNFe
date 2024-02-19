@@ -19,7 +19,7 @@ setup(
                                                os.path.join('schema', 'pl_006s', '*')],
                   'pysignfe.nfe.manual_500':  [os.path.join('schema', 'pl_008e', '*')],
                   'pysignfe.nfe.manual_600':  [os.path.join('schema', 'pl_008i2', '*')],
-                  'pysiignfe.nfe.manual_700': [os.path.join('schema', 'PL_009_V4', '*')],
+                  'pysignfe.nfe.manual_700': [os.path.join('schema', 'PL_009_V4', '*')],
                   'pysignfe.xml_sped':  [os.path.join('schema', '*')],
                   'pysignfe.nfse': ['certificados/*'],
                   'pysignfe.nfse.bhiss': [os.path.join('v10', 'schema', '*')]
