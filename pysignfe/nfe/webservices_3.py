@@ -528,7 +528,7 @@ UFPR = {
         WS_NFE_CONSULTA         : u'nfe/NFeConsulta3',
         #WS_NFE_SITUACAO         : u'nfe/NFeStatusServico4',
         WS_NFE_SITUACAO         : u'nfe/NFeStatusServico3',
-        WS_NFE_CONSULTA_CADASTRO: u'nfe/CadConsultaCadastro2?wsdl',
+        WS_NFE_CONSULTA_CADASTRO: u'nfe/CadConsultaCadastro4?wsdl',
         WS_NFE_EVENTO           : u'nfe/NFeRecepcaoEvento'
         #        WS_NFE_RECEPCAO_EVENTO  : 'nfe-evento/NFeRecepcaoEvento',
     },
