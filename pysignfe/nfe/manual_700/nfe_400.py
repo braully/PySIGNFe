@@ -1304,7 +1304,7 @@ class ICMSTot(nfe_310.ICMSTot):
         xml += self.vII.xml
         xml += self.vIPI.xml
         xml += self.vIPIDevol.xml
-        # print(f'IPDEVOL {self.vIPIDevol.xml}')
+        print(f'IPDEVOL {self.vIPIDevol.xml}')
         xml += self.vPIS.xml
         xml += self.vCOFINS.xml
         xml += self.vOutro.xml
@@ -1549,7 +1549,6 @@ class InfNFe(nfe_310old.InfNFe):
         return xml
 
     def set_xml(self, arquivo):
-        print(f'SET_XML: {arquivo}')
         if self._le_xml(arquivo):
             self.versao.xml   = arquivo
             self.Id.xml       = arquivo

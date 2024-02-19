@@ -127,7 +127,7 @@ class NohXML(object):
             else:
                 tag = self._preenche_namespace(tag)
         
-        #print('tag: ', tag)
+        print('tag: ', tag)
         nohs = self._xml.xpath(tag, namespaces=namespaces)
         
         if len(nohs) >= 1:
@@ -960,7 +960,6 @@ def por_acentos(texto):
     return texto
 
 def tira_abertura(texto):
-    # print(f'texto: {texto}')
     #Respostas de NFS-es podem vir com mais de uma abertura
     texto = re.sub(r'<\?[^\?>]+\?>', '', texto)
     return texto
