@@ -1283,7 +1283,6 @@ class ICMSTot(nfe_310.ICMSTot):
         self.vPIS    = TagDecimal(nome=u'vPIS'   , codigo=u'W13', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//NFe/infNFe/total/ICMSTot', obrigatorio=True)
 
     def get_xml(self):
-        print('\n\n********************* ICMSTot **********************\n\n')
         xml = XMLNFe.get_xml(self)
         xml += '<ICMSTot>'
         xml += self.vBC.xml
@@ -1304,7 +1303,6 @@ class ICMSTot(nfe_310.ICMSTot):
         xml += self.vII.xml
         xml += self.vIPI.xml
         xml += self.vIPIDevol.xml
-        print(f'IPDEVOL {self.vIPIDevol.xml}')
         xml += self.vPIS.xml
         xml += self.vCOFINS.xml
         xml += self.vOutro.xml
