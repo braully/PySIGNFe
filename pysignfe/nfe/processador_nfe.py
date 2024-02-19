@@ -207,6 +207,7 @@ class ProcessadorNFe(object):
         
         print("  servidor: ", self._servidor)
         print("  url: ", self._url)
+        exit()
         from http.client import HTTPSConnection
         con = HTTPSConnection(self._servidor, key_file=nome_arq_chave, cert_file=nome_arq_certificado)
         #con = ConexaoHTTPS(self._servidor, key_file=nome_arq_chave, cert_file=nome_arq_certificado)

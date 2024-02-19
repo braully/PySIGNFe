@@ -127,7 +127,7 @@ class NohXML(object):
             else:
                 tag = self._preenche_namespace(tag)
         
-        print('tag: ', tag)
+        # print('tag: ', tag)
         nohs = self._xml.xpath(tag, namespaces=namespaces)
         
         if len(nohs) >= 1:
