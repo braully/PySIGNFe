@@ -46,7 +46,14 @@ class ConsNFeDest(XMLNFe):
             self.ultNSU.xml = arquivo
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class ResCCe(XMLNFe):
@@ -93,7 +100,14 @@ class ResCCe(XMLNFe):
             self.tpNF.xml = arquivo
             self.dhRecbto.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class ResCanc(XMLNFe):
@@ -152,7 +166,14 @@ class ResCanc(XMLNFe):
             self.dhRecbto.xml = arquivo
             self.cSitNFe.xml = arquivo
             self.cSitConf.xml = arquivo
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class ResNFe(XMLNFe):
@@ -210,7 +231,14 @@ class ResNFe(XMLNFe):
             self.cSitNFe.xml = arquivo
             self.cSitConf.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 
@@ -237,7 +265,14 @@ class Ret(XMLNFe):
             self.resCanc.xml = arquivo
             self.resCCe.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 
@@ -295,5 +330,12 @@ class RetConsNFeDest(XMLNFe):
             self.ret = self.le_grupo('//retConsNFeDest/ret', Ret)
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 

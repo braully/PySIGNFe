@@ -35,7 +35,14 @@ class EnviCTe(XMLNFe):
             self.idLote.xml    = arquivo
             self.CTe = self.le_grupo('//enviLote/CTe', CTe)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class InfRec(XMLNFe):
@@ -63,7 +70,14 @@ class InfRec(XMLNFe):
             self.dhRecbto.xml = arquivo
             self.tMed.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class RetEnviCTe(XMLNFe):
@@ -101,4 +115,10 @@ class RetEnviCTe(XMLNFe):
             self.cUF.xml      = arquivo
             self.infRec.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

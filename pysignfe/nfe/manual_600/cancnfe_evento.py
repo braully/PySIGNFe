@@ -51,7 +51,14 @@ class EnvEventoCancNFe(cancnfe_evento.EnvEventoCancNFe):
             self.idLote.xml    = arquivo
             self.evento = self.le_grupo('//envEvento/evento', EventoCancNFe)
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class InfEventoRecebidoCancNFe(cancnfe_evento.InfEventoRecebidoCancNFe):
@@ -108,7 +115,14 @@ class RetEnvEventoCancNFe(cancnfe_evento.RetEnvEventoCancNFe):
                 self.dic_retEvento[ret.infEvento.chNFe.valor] = ret
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class ProcEventoNFeCancNFe(cancnfe_evento.ProcEventoNFeCancNFe):

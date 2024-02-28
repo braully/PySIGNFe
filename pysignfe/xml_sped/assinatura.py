@@ -64,4 +64,11 @@ class Signature(XMLNFe):
         return self.xml
         
         
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+

@@ -22,7 +22,14 @@ class DetEvento(XMLNFe):
         if self._le_xml(arquivo):
             self.versao.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class InfEventoEnviado(XMLNFe):
@@ -76,7 +83,14 @@ class InfEventoEnviado(XMLNFe):
             self.verEvento.xml = arquivo
             self.detEvento.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class Evento(XMLNFe):
@@ -107,7 +121,14 @@ class Evento(XMLNFe):
             self.infEvento.xml = arquivo
             self.Signature.xml = self._le_noh('//evento/sig:Signature')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class EnvEvento(XMLNFe):
@@ -136,7 +157,14 @@ class EnvEvento(XMLNFe):
             self.idLote.xml    = arquivo
             self.evento = self.le_grupo('//envEvento/evento', Evento)
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class InfEventoRecebido(XMLNFe):
@@ -205,7 +233,14 @@ class InfEventoRecebido(XMLNFe):
             self.dhRegEvento.xml = arquivo
             self.nProt.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class RetEvento(XMLNFe):
@@ -234,7 +269,14 @@ class RetEvento(XMLNFe):
             self.infEvento.xml = arquivo
             self.Signature.xml = self._le_noh('//retEvento/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class RetEnvEvento(XMLNFe):
@@ -296,7 +338,14 @@ class RetEnvEvento(XMLNFe):
             for ret in self.retEvento:
                 self.dic_retEvento[ret.infEvento.chNFe.valor] = ret
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class ProcEventoNFe(XMLNFe):
@@ -326,4 +375,11 @@ class ProcEventoNFe(XMLNFe):
             self.evento.xml = arquivo
             self.retEvento.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+

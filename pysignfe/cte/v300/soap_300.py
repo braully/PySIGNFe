@@ -28,7 +28,14 @@ class CTeCabecMsg(XMLNFe):
 
         return self.xml
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
     
 class CTeDadosMsg(XMLNFe):
@@ -47,7 +54,14 @@ class CTeDadosMsg(XMLNFe):
     def set_xml(self, arquivo):
         pass
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class SOAPEnvio(XMLNFe):
@@ -86,7 +100,14 @@ class SOAPEnvio(XMLNFe):
     def set_xml(self):
         pass
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     def get_header(self):
         header = self._header
@@ -124,4 +145,10 @@ class SOAPRetorno(XMLNFe):
             self.cteCabecMsg.xml = arquivo
             self.resposta.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

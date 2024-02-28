@@ -34,7 +34,14 @@ class EvCancCTe(XMLNFe):
             self.nProt.xml      = arquivo
             self.xJust.xml      = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class Toma4(XMLNFe):
@@ -66,7 +73,14 @@ class Toma4(XMLNFe):
             self.CPF.xml = arquivo
             self.IE.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class EvEPECCTe(XMLNFe):
@@ -119,7 +133,14 @@ class EvEPECCTe(XMLNFe):
             self.tpCTe.xml      = arquivo
             self.dhEmi.xml      = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class EvRegMultimodal(XMLNFe):
@@ -148,7 +169,14 @@ class EvRegMultimodal(XMLNFe):
             self.xRegistro.xml  = arquivo
             self.nDoc.xml       = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class InfCorrecao(XMLNFe):
@@ -176,7 +204,14 @@ class InfCorrecao(XMLNFe):
             self.valorAlterado.xml       = arquivo
             self.nroItemAlterado.xml       = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class EvCCeCTe(XMLNFe):
@@ -206,7 +241,14 @@ class EvCCeCTe(XMLNFe):
             self.infCorrecao = self.le_grupo('//eventoCTe/infEvento/detEvento/evCCeCTe/infCorrecao', InfCorrecao, sigla_ns='cte')
             self.xCondUso.xml       = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class EvPrestDesacordo(XMLNFe):
@@ -234,7 +276,14 @@ class EvPrestDesacordo(XMLNFe):
             self.indDesacordoOper.xml = arquivo
             self.xOBS.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class DestGTV(XMLNFe):
@@ -267,7 +316,14 @@ class DestGTV(XMLNFe):
             self.UF.xml  = arquivo
             self.xNome.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
  
  
 class RemGTV(XMLNFe):
@@ -300,7 +356,14 @@ class RemGTV(XMLNFe):
             self.UF.xml  = arquivo
             self.xNome.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
  
    
 class InfEspecie(XMLNFe):
@@ -324,7 +387,14 @@ class InfEspecie(XMLNFe):
             self.tpEspecie.xml = arquivo
             self.vEspecie.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
     
@@ -381,7 +451,14 @@ class InfGTV(XMLNFe):
             self.RNTRC.xml      = arquivo
             self.infEspecie = self.le_grupo('//eventoCTe/infEvento/detEvento/evGTV/infGTV/infEspecie', InfEspecie, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class EvGTV(XMLNFe):
@@ -407,4 +484,11 @@ class EvGTV(XMLNFe):
             self.descEvento.xml = arquivo
             self.infGTV = self.le_grupo('//eventoCTe/infEvento/detEvento/evGTV/infGTV', InfGTV, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+

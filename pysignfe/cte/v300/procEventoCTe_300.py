@@ -47,7 +47,14 @@ class DetEvento(XMLNFe):
                 self.evento = EvGTV()
                 self.evento.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class InfEvento(XMLNFe):
@@ -97,7 +104,14 @@ class InfEvento(XMLNFe):
             self.nProt.xml = arquivo
             self.xJust.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class EventoCTe(XMLNFe):
@@ -129,7 +143,14 @@ class EventoCTe(XMLNFe):
             self.infEvento.xml     = arquivo
             self.Signature.xml = self._le_noh('//eventoCTe/sig:Signature', ns=NAMESPACE_CTE)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class InfEventoRet(XMLNFe):
@@ -185,7 +206,14 @@ class InfEventoRet(XMLNFe):
             self.dhRegEvento.xml = arquivo
             self.nProt.xml       = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
     
@@ -218,7 +246,14 @@ class RetEventoCTe(XMLNFe):
             self.infEvento.xml     = arquivo
             self.Signature.xml = self._le_noh('//retEventoCTe/sig:Signature', ns=NAMESPACE_CTE)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 
@@ -252,4 +287,11 @@ class ProcEventoCTe(XMLNFe):
             self.eventoCTe.xml     = arquivo
             self.retEventoCTe.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+

@@ -127,7 +127,7 @@ class NohXML(object):
             else:
                 tag = self._preenche_namespace(tag)
         
-        #print('tag: ', tag)
+        # print('tag: ', tag)
         nohs = self._xml.xpath(tag, namespaces=namespaces)
         
         if len(nohs) >= 1:
@@ -886,6 +886,7 @@ class XMLNFe(NohXML):
     def validar(self):
         arquivo_esquema = self.caminho_esquema + self.arquivo_esquema
         print(f'arquivo validador: {arquivo_esquema}')
+
         # Aqui é importante remover a declaração do encoding
         # para evitar erros de conversão unicode para ascii
         xml = tira_abertura(self.xml).encode(u'utf-8')

@@ -128,9 +128,9 @@ class ProcessadorCTe(object):
         self._soap_retorno.resposta.msg      = resp.msg
         self._soap_retorno.resposta.original = unicode(resp.read().decode('utf-8'))
         # Tudo certo!
-        #print ('servidor:', self._servidor)
-        #print('url: ', self._url)
-        #print ('STATUS__-', self._soap_retorno.resposta.original)
+        print ('servidor:', self._servidor)
+        print('url: ', self._url)
+        print ('STATUS__-', self._soap_retorno.resposta.original)
         if self._soap_retorno.resposta.status == 200:
             self._soap_retorno.xml = self._soap_retorno.resposta.original
             

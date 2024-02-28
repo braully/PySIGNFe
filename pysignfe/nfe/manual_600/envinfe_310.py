@@ -27,7 +27,14 @@ class EnviNFe(envinfe_310.EnviNFe):
 
         return self.xml
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class InfRec(envinfe_310.InfRec):
@@ -70,4 +77,10 @@ class RetEnviNFe(envinfe_310.RetEnviNFe):
             self.infRec.xml   = arquivo
             self.protNFe.xml  = arquivo
        
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

@@ -4,7 +4,8 @@ from pysignfe.xml_sped.base import etree
           
 from pysignfe.nfe.manual_500 import conssitnfe_310
 from pysignfe.xml_sped import *
-from pysignfe.nfe.manual_600 import ESQUEMA_ATUAL, ProtNFe_310, RetCancNFe_310
+from pysignfe.nfe.manual_600 import ProtNFe_310, RetCancNFe_310
+from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 from .cancnfe_evento import ProcEventoNFeCancNFe
 from .carta_correcao import ProcEventoNFeCCe
 from .epec_evento import ProcEventoNFeEPEC
@@ -100,4 +101,11 @@ class RetConsSitNFe(conssitnfe_310.RetConsSitNFe):
                         self.procEventoNFe.append(pev)
                 
                 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+

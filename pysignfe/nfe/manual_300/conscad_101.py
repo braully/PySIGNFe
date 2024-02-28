@@ -33,7 +33,14 @@ class _InfConsEnviado(XMLNFe):
             self.CNPJ.xml  = arquivo
             self.CPF.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class ConsCad(XMLNFe):
@@ -55,7 +62,14 @@ class ConsCad(XMLNFe):
             self.versao.xml = arquivo
             self.infCons.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class _Ender(XMLNFe):
@@ -91,7 +105,14 @@ class _Ender(XMLNFe):
             self.xMun.xml    = arquivo
             self.CEP.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class _InfCadRecebido(XMLNFe):
@@ -150,7 +171,14 @@ class _InfCadRecebido(XMLNFe):
             self.IEAtual.xml  = arquivo
             self.ender.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class _InfConsRecebido(XMLNFe):
@@ -206,7 +234,14 @@ class _InfConsRecebido(XMLNFe):
                     nc.xml = c
                     self.infCad.append(nc)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class RetConsCad(XMLNFe):
@@ -228,4 +263,11 @@ class RetConsCad(XMLNFe):
             self.versao.xml  = arquivo
             self.infCons.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+

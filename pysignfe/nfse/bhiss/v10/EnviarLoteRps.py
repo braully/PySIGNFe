@@ -31,7 +31,14 @@ class EnviarLoteRpsEnvio(XMLNFe):
             self.LoteRps.xml = arquivo
             self.Signature.xml = self._le_noh('//EnviarLoteRpsEnvio/sig:Signature')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class EnviarLoteRpsResposta(XMLNFe):
@@ -65,4 +72,10 @@ class EnviarLoteRpsResposta(XMLNFe):
             self.Protocolo.xml = arquivo
             self.ListaMensagemRetorno.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

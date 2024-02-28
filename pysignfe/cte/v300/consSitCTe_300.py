@@ -37,7 +37,14 @@ class ConsSitCTe(XMLNFe):
             self.xServ.xml  = arquivo
             self.chCTe.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class RetConsSitCTe(XMLNFe):
@@ -97,5 +104,12 @@ class RetConsSitCTe(XMLNFe):
                 
             self.procEventoCTe = self.le_grupo('//retConsSitCTe/procEventoCTe', ProcEventoCTe_300, sigla_ns='cte')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     

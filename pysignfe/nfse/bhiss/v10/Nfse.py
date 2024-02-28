@@ -27,7 +27,14 @@ class IdentificacaoOrgaoGerador(XMLNFe):
             self.CodigoMunicipio.xml    = arquivo
             self.Uf.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
         
 
 class DadosPrestador(XMLNFe):
@@ -57,7 +64,14 @@ class DadosPrestador(XMLNFe):
             self.Endereco.xml = arquivo
             self.Contato.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
         
         
 class InfNfse(XMLNFe):
@@ -134,7 +148,14 @@ class InfNfse(XMLNFe):
             self.OrgaoGerador.xml = arquivo
             self.ConstrucaoCivil.xml = arquivo
             
-    xml = property(get_xml, set_xml)   
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+   
         
 
 class NFSe(XMLNFe):
@@ -159,7 +180,14 @@ class NFSe(XMLNFe):
             self.InfNfse.xml    = arquivo
             self.Signature.xml = self._le_noh('[nfse]//Rps/sig:Signature')
 
-    xml = property(get_xml, set_xml) 
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+ 
     
 class CompNfse(XMLNFe):
     def __init__(self):
@@ -185,4 +213,10 @@ class CompNfse(XMLNFe):
             self.NfseCancelamento.xml = arquivo
             self.NfseSubstituicao.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

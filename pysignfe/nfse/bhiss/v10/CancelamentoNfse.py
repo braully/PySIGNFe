@@ -26,7 +26,14 @@ class IdentificacaoNfse(XMLNFe):
             self.InscricaoMunicipal.xml = arquivo
             self.CodigoMunicipio.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class InfPedidoCancelamento(XMLNFe):
@@ -50,7 +57,14 @@ class InfPedidoCancelamento(XMLNFe):
             self.IdentificacaoNfse.xml    = arquivo
             self.CodigoCancelamento.xml = arquivo
 
-    xml = property(get_xml, set_xml)          
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+          
     
 
 class PedidoCancelamento(XMLNFe):
@@ -74,7 +88,14 @@ class PedidoCancelamento(XMLNFe):
             self.InfPedidoCancelamento.xml    = arquivo
             self.Signature.xml = self._le_noh('[nfse]//Rps/sig:Signature')
 
-    xml = property(get_xml, set_xml)      
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+      
 
 class ConfirmacaoCancelamento(XMLNFe):
     def __init__(self):
@@ -96,7 +117,14 @@ class ConfirmacaoCancelamento(XMLNFe):
             self.Pedido.xml = arquivo
             self.DataHora.xml = arquivo
 
-    xml = property(get_xml, set_xml)  
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+  
     
 
 class CancelamentoNfse(XMLNFe):
@@ -118,4 +146,11 @@ class CancelamentoNfse(XMLNFe):
             self.ConfirmacaoCancelamento.xml    = arquivo
             self.Signature.xml = self._le_noh('//Rps/sig:Signature')
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+    

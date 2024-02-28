@@ -291,7 +291,7 @@ UFMG = {
 
 UFPR = {
     NFE_AMBIENTE_PRODUCAO: {
-        u'servidor'             : u'nfe.fazenda.pr.gov.br',
+        u'servidor'             : u'nfe.sefa.pr.gov.br',
         WS_NFE_ENVIO_LOTE         : u'NFENWebServices/services/nfeRecepcao',
         WS_NFE_CONSULTA_RECIBO : u'NFENWebServices/services/nfeRetRecepcao',
         WS_NFE_CANCELAMENTO     : u'NFENWebServices/services/nfeCancelamentoNF',
@@ -300,7 +300,7 @@ UFPR = {
         WS_NFE_SITUACAO         : u'NFENWebServices/services/nfeStatusServicoNF'
         },
     NFE_AMBIENTE_HOMOLOGACAO: {
-        u'servidor'             : u'homologacao.nfe.fazenda.pr.gov.br',
+        u'servidor'             : u'homologacao.nfe.sefa.pr.gov.br',
         WS_NFE_ENVIO_LOTE         : u'NFENWebServices/services/nfeRecepcao',
         WS_NFE_CONSULTA_RECIBO : u'NFENWebServices/services/nfeRetRecepcao',
         WS_NFE_CANCELAMENTO     : u'NFENWebServices/services/nfeCancelamentoNF',

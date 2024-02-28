@@ -2,9 +2,9 @@
 import os
 
 from pysignfe.nfe.manual_500 import consrecinfe_310
-from pysignfe.nfe.manual_600 import ESQUEMA_ATUAL
+from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 from pysignfe.xml_sped import *
-from pysignfe.nfe.manual_600.nfe_310 import NFe
+from pysignfe.nfe.manual_700.nfe_400 import NFe
 
 DIRNAME = os.path.dirname(__file__)
 
@@ -54,7 +54,14 @@ class InfProt(consrecinfe_310.InfProt):
             self.cStat.xml     = arquivo
             self.xMotivo.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class ProtNFe(consrecinfe_310.ProtNFe):
@@ -83,7 +90,14 @@ class ProtNFe(consrecinfe_310.ProtNFe):
             self.infProt.xml = self._le_noh(u'//protNFe/infProt')
             self.Signature.xml = self._le_noh(u'//protNFe/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     def protocolo_formatado_nfce(self):
         if not self.infProt.nProt.valor:
@@ -143,7 +157,14 @@ class RetConsReciNFe(consrecinfe_310.RetConsReciNFe):
             for pn in self.protNFe:
                 self.dic_protNFe[pn.infProt.chNFe.valor] = pn
        
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
     
 class ProcNFe(consrecinfe_310.ProcNFe):

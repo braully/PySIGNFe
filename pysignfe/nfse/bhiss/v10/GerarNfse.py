@@ -32,7 +32,14 @@ class GerarNfseEnvio(XMLNFe):
             self.LoteRps.xml = arquivo
             self.Signature.xml = self._le_noh('//GerarNfseEnvio/sig:Signature')
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
     
@@ -80,4 +87,10 @@ class GerarNfseResposta(XMLNFe):
             self.ListaMensagemRetornoLote.xml = arquivo
             self.CompNfse = self.le_grupo('[nfse]//GerarNfseResposta/CompNfse', CompNfse)
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

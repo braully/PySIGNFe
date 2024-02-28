@@ -3,7 +3,7 @@
 from pysignfe.corr_unicode import *
 import os
 import locale
-import hashlib
+import datetime
 
 from pysignfe.xml_sped import *
 from pysignfe.nfe.manual_401 import nfe_200
@@ -94,7 +94,14 @@ class ISSQN(nfe_200.ISSQN):
             self.indIncentivo.xml = arquivo
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 
@@ -686,7 +693,14 @@ class ICMS(nfe_200.ICMS):
                 self.vBCSTDest.xml   = arquivo
                 self.vICMSSTDest.xml = arquivo
                 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 
@@ -732,7 +746,14 @@ class Comb(nfe_200.Comb):
             self.CIDE.xml      = arquivo
             #self.nRECOPI.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class Arma(nfe_200.Arma):
@@ -826,7 +847,14 @@ class DI(nfe_200.DI):
                 for i in range(len(adis)):
                     self.adi[i].xml = adis[i]
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class ExportInd(XMLNFe):
@@ -852,7 +880,14 @@ class ExportInd(XMLNFe):
             self.qExport.xml = arquivo
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class DetExport(XMLNFe):
@@ -875,7 +910,14 @@ class DetExport(XMLNFe):
             self.exportInd.xml= arquivo
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class Prod(nfe_200.Prod):
@@ -987,7 +1029,14 @@ class Prod(nfe_200.Prod):
 
             self.comb.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class Det(nfe_200.Det):
     def __init__(self):
@@ -1069,7 +1118,14 @@ class Card(XMLNFe):
             self.tpIntegra.xml = arquivo
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class Pag(XMLNFe):
      # Formas de pagamento NFC-e.
@@ -1120,7 +1176,14 @@ class Pag(XMLNFe):
             self.card.xml  = arquivo
 
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     def forma_pagamento_danfe(self):
         return self.formas_pagamento[self.tPag.valor]
@@ -1220,13 +1283,20 @@ class ISSQNTot(nfe_200.ISSQNTot):
             self.vISSRet.xml = arquivo
             self.cRegTrib.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class ICMSTot(nfe_200.ICMSTot):
     def __init__(self):
         super(ICMSTot, self).__init__()
-        self.vICMSDeson  = TagDecimal(nome=u'vICMSDeson'  , codigo=u'W04a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//NFe/infNFe/total/ICMSTot',valor=u'0.00')
+        self.vICMSDeson  = TagDecimal(nome=u'vICMSDeson'  , codigo=u'W04a', tamanho=[1, 15, 1], decimais=[0, 2, 2], raiz=u'//NFe/infNFe/total/ICMSTot', valor=u'0.00')
 
     def get_xml(self):
         xml = XMLNFe.get_xml(self)
@@ -1269,7 +1339,14 @@ class ICMSTot(nfe_200.ICMSTot):
             self.vNF.xml     = arquivo
             self.vTotTrib.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class Total(nfe_200.Total):
@@ -1294,7 +1371,14 @@ class Total(nfe_200.Total):
             self.ISSQNTot.xml = arquivo
             self.retTrib.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class Entrega(nfe_200.Entrega):
     def __init__(self):
@@ -1327,7 +1411,14 @@ class autXML(XMLNFe):
             self.CNPJ.xml      = arquivo
             self.CPF.xml       = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class EnderDest(nfe_200.EnderDest):
     def __init__(self):
@@ -1375,7 +1466,14 @@ class EnderDest(nfe_200.EnderDest):
             self.xPais.xml   = arquivo
             self.fone.xml    = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class Dest(nfe_200.Dest):
@@ -1417,7 +1515,14 @@ class Dest(nfe_200.Dest):
             self.ISUF.xml      = arquivo
             self.email.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class Avulsa(nfe_200.Avulsa):
@@ -1542,7 +1647,14 @@ class Ide(nfe_200.Ide):
             self.dhCont.xml  = arquivo
             self.xJust.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class InfNFe(nfe_200.InfNFe):
     def __init__(self):
@@ -1628,7 +1740,14 @@ class InfNFe(nfe_200.InfNFe):
             self.compra.xml   = arquivo
             self.cana.xml     = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class NFe(nfe_200.NFe):
@@ -1651,6 +1770,7 @@ class NFe(nfe_200.NFe):
     #     #
     #     self.infNFe.ide.cNF.valor = self.chave[35:43]
     def gera_nova_chave(self):
+
         chave = unicode(self.infNFe.ide.cUF.valor).zfill(2)
         chave += unicode(self.infNFe.ide.dhEmi.valor.strftime(u'%y%m')).zfill(4)
         chave += unicode(self.infNFe.emit.CNPJ.valor).zfill(14)
@@ -1713,6 +1833,10 @@ class NFe(nfe_200.NFe):
 
 
     def monta_chave(self):
+
+        if not self.infNFe.ide.dhEmi.valor:
+            self.infNFe.ide.dhEmi.valor = datetime.datetime.now()
+
         self.gera_nova_chave()
         chave = unicode(self.infNFe.ide.cUF.valor).strip().rjust(2, u'0')
         chave += unicode(self.infNFe.ide.dhEmi.valor.strftime(u'%y%m')).strip().rjust(4, u'0')

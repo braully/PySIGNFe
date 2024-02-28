@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from pysignfe.xml_sped import *
-from pysignfe.nfe.manual_600 import ESQUEMA_ATUAL
+from pysignfe.nfe.manual_700 import ESQUEMA_ATUAL
 from pysignfe.nfe.manual_500 import carta_correcao
 
 import os
@@ -51,7 +51,14 @@ class EnvEventoCCe(carta_correcao.EnvEventoCCe):
             self.idLote.xml    = arquivo
             self.evento = self.le_grupo('//envEvento/evento', EventoCCe)
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 
 class InfEventoRecebidoCCe(carta_correcao.InfEventoRecebidoCCe):
@@ -105,7 +112,14 @@ class RetEnvEventoCCe(carta_correcao.RetEnvEventoCCe):
             for ret in self.retEvento:
                 self.dic_retEvento[ret.infEvento.chNFe.valor] = ret
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class ProcEventoNFeCCe(carta_correcao.ProcEventoNFeCCe):

@@ -23,7 +23,14 @@ class Contato(XMLNFe):
             self.Telefone.xml = arquivo
             self.Email.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class Endereco(XMLNFe):
     def __init__(self):
@@ -59,7 +66,14 @@ class Endereco(XMLNFe):
             self.Uf.xml = arquivo
             self.Cep.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class CpfCnpj(XMLNFe):
     def __init__(self):
@@ -82,7 +96,14 @@ class CpfCnpj(XMLNFe):
             self.Cpf.xml  = arquivo
             self.Cnpj.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
         
 
 class IdentificacaoTomador(XMLNFe):
@@ -106,7 +127,14 @@ class IdentificacaoTomador(XMLNFe):
             self.CpfCnpj.xml  = arquivo
             self.InscricaoMunicipal.xml  = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class DadosTomador(XMLNFe):
     def __init__(self):
@@ -133,7 +161,14 @@ class DadosTomador(XMLNFe):
             self.Endereco.xml   = arquivo
             self.Contato.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 class Tomador(DadosTomador):
     def get_xml(self):
@@ -154,7 +189,14 @@ class Tomador(DadosTomador):
             self.Endereco.xml   = arquivo
             self.Contato.xml   = arquivo
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+    
     
         
 
@@ -219,7 +261,14 @@ class Valores(XMLNFe):
             self.DescontoCondicionado.xml = arquivo
             self.DescontoIncondicionado.xml = arquivo
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+    
     
 
 class DadosServico(XMLNFe):
@@ -253,7 +302,14 @@ class DadosServico(XMLNFe):
             self.Discriminacao.xml   = arquivo
             self.CodigoMunicipio.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
     
 class IdentificacaoRps(XMLNFe):
@@ -278,7 +334,14 @@ class IdentificacaoRps(XMLNFe):
             self.Serie.xml   = arquivo
             self.Tipo.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 class RpsSubstituido(IdentificacaoRps):
     def get_xml(self):
@@ -299,7 +362,14 @@ class RpsSubstituido(IdentificacaoRps):
             self.Serie.xml   = arquivo
             self.Tipo.xml   = arquivo
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+    
 
     
 
@@ -324,7 +394,14 @@ class IdentificacaoPrestador(XMLNFe):
             self.Cnpj.xml   = arquivo
             self.InscricaoMunicipal.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 #ABRASF
 class IdentificacaoIntermediario(XMLNFe):
@@ -345,7 +422,14 @@ class IdentificacaoIntermediario(XMLNFe):
             self.CpfCnpj.xml = arquivo
             self.InscricaoMunicipal.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 #ABRASF
@@ -372,7 +456,14 @@ class DadosIntermediario(XMLNFe):
             self.RazaoSocial.xml = arquivo
             #self.CodigoMunicipio.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
 
 class IdentificacaoIntermediarioServico(XMLNFe):
@@ -396,7 +487,14 @@ class IdentificacaoIntermediarioServico(XMLNFe):
             self.CpfCnpj.xml = arquivo
             self.InscricaoMunicipal.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
         
 class DadosConstrucaoCivil(XMLNFe):
@@ -420,7 +518,14 @@ class DadosConstrucaoCivil(XMLNFe):
             self.CodigoObra.xml = arquivo
             self.Art.xml = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class InfRps(XMLNFe):
     def __init__(self):
@@ -482,7 +587,14 @@ class InfRps(XMLNFe):
             self.IntermediarioServico.xml = arquivo
             self.ConstrucaoCivil.xml = arquivo
 
-    xml = property(get_xml, set_xml)    
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+    
         
         
 
@@ -508,7 +620,14 @@ class Rps(XMLNFe):
             self.InfRps.xml    = arquivo
             self.Signature.xml = self._le_noh('[nfse]//Rps/sig:Signature')
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class LoteRps(XMLNFe):
@@ -550,4 +669,10 @@ class LoteRps(XMLNFe):
             self.QuantidadeRps.xml = arquivo
             self.Rps = self.le_grupo('[nfse]//LoteRps/Rps', Rps)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)

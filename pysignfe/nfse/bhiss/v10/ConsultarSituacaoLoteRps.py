@@ -30,7 +30,14 @@ class MensagemRetorno(XMLNFe):
             self.Mensagem.xml   = arquivo
             self.Correcao.xml   = arquivo
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
 class MensagemRetornoLote(XMLNFe):
@@ -57,7 +64,14 @@ class MensagemRetornoLote(XMLNFe):
             self.Codigo.xml   = arquivo
             self.Mensagem.xml   = arquivo
 
-    xml = property(get_xml, set_xml)   
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+   
     
     
 class ListaMensagemRetornoLote(XMLNFe):
@@ -79,7 +93,14 @@ class ListaMensagemRetornoLote(XMLNFe):
         if self._le_xml(arquivo):
             self.MensagemRetornoLote   = self.le_grupo('[nfse]//ListaMensagemRetornoLote/MensagemRetornoLote', MensagemRetornoLote)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
 
 class ListaMensagemRetorno(XMLNFe):
     def __init__(self):
@@ -100,7 +121,14 @@ class ListaMensagemRetorno(XMLNFe):
         if self._le_xml(arquivo):
             self.MensagemRetorno   = self.le_grupo('[nfse]//ListaMensagemRetorno/MensagemRetorno', MensagemRetorno)
 
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
             
             
 class ConsultarSituacaoLoteRpsEnvio(XMLNFe):
@@ -127,7 +155,14 @@ class ConsultarSituacaoLoteRpsEnvio(XMLNFe):
             self.Prestador.xml = arquivo
             self.Protocolo.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
+
     
     
     
@@ -158,4 +193,10 @@ class ConsultarSituacaoLoteRpsResposta(XMLNFe):
             self.Situacao.xml   = arquivo
             self.ListaMensagemRetorno.xml = arquivo
             
-    xml = property(get_xml, set_xml)
+    @property
+    def xml(self):
+        return self.get_xml()
+
+    @xml.setter
+    def xml(self, arquivo):
+        self.set_xml(arquivo)
